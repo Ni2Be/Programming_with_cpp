@@ -1,5 +1,0 @@
-﻿  main.cpp
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7\kapitel 7\main.cpp(143): warning C4715: "TokenStream::get": Nicht alle Steuerelementpfade geben einen Wert zurück.
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7\kapitel 7\main.cpp(270): warning C4715: "primary": Nicht alle Steuerelementpfade geben einen Wert zurück.
-  Kapitel 7.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 7\Debug\Kapitel 7.exe
-  Kapitel 7.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 7\Debug\Kapitel 7.pdb (Partial PDB)

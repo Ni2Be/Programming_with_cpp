@@ -1,5 +1,0 @@
-﻿  main.cpp
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 6 taschenrechner\kapitel 6 taschenrechner\main.cpp(82): warning C4715: "TokenStream::get": Nicht alle Steuerelementpfade geben einen Wert zurück.
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 6 taschenrechner\kapitel 6 taschenrechner\main.cpp(198): warning C4715: "primary": Nicht alle Steuerelementpfade geben einen Wert zurück.
-  Kapitel 6 Taschenrechner.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 6 Taschenrechner\Debug\Kapitel 6 Taschenrechner.exe
-  Kapitel 6 Taschenrechner.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 6 Taschenrechner\Debug\Kapitel 6 Taschenrechner.pdb (Partial PDB)

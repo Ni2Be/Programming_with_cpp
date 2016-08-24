@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\nice2bee\onedrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7 buggy\buggy calc\buggy calc\main.cpp(128): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+c:\users\nice2bee\onedrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7 buggy\buggy calc\buggy calc\main.cpp(135): warning C4018: "<=": Konflikt zwischen "signed" und "unsigned"
+c:\users\nice2bee\onedrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7 buggy\buggy calc\buggy calc\main.cpp(145): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+c:\users\nice2bee\onedrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7 buggy\buggy calc\buggy calc\main.cpp(103): warning C4715: "Token_stream::get": Nicht alle Steuerelementpfade geben einen Wert zurück.
+c:\users\nice2bee\onedrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7 buggy\buggy calc\buggy calc\main.cpp(131): warning C4715: "get_value": Nicht alle Steuerelementpfade geben einen Wert zurück.
+c:\users\nice2bee\onedrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 7 buggy\buggy calc\buggy calc\main.cpp(173): warning C4715: "primary": Nicht alle Steuerelementpfade geben einen Wert zurück.
+  buggy calc.vcxproj -> C:\Users\Nice2Bee\OneDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 7 buggy\buggy calc\Debug\buggy calc.exe
+  buggy calc.vcxproj -> C:\Users\Nice2Bee\OneDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 7 buggy\buggy calc\Debug\buggy calc.pdb (Partial PDB)

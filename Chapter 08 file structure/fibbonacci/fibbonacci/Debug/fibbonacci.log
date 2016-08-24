@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\nice2bee\onedrive\programmieren\c++\buch\kapitel 1 bis 5\kapitel 8 organisation\fibbonacci\fibbonacci\main.cpp(34): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  fibbonacci.vcxproj -> C:\Users\Nice2Bee\OneDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 8 organisation\fibbonacci\Debug\fibbonacci.exe
+  fibbonacci.vcxproj -> C:\Users\Nice2Bee\OneDrive\Programmieren\C++\Buch\Kapitel 1 bis 5\Kapitel 8 organisation\fibbonacci\Debug\fibbonacci.pdb (Partial PDB)

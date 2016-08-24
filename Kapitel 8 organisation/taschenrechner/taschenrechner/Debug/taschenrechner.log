@@ -1,8 +1,0 @@
-﻿  main.cpp
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel\kapitel 8 organisation\taschenrechner\taschenrechner\main.cpp(106): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel\kapitel 8 organisation\taschenrechner\taschenrechner\main.cpp(115): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel\kapitel 8 organisation\taschenrechner\taschenrechner\main.cpp(138): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel\kapitel 8 organisation\taschenrechner\taschenrechner\main.cpp(112): warning C4715: "getValue": Nicht alle Steuerelementpfade geben einen Wert zurück.
-c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel\kapitel 8 organisation\taschenrechner\taschenrechner\main.cpp(287): warning C4715: "primary": Nicht alle Steuerelementpfade geben einen Wert zurück.
-  taschenrechner.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel\Kapitel 8 organisation\taschenrechner\Debug\taschenrechner.exe
-  taschenrechner.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel\Kapitel 8 organisation\taschenrechner\Debug\taschenrechner.pdb (Partial PDB)
