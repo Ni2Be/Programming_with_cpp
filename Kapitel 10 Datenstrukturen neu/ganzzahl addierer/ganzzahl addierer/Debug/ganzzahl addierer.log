@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\jorda_000\skydrive\programmieren\c++\buch\kapitel\kapitel 10 datenstrukturen neu\ganzzahl addierer\ganzzahl addierer\main.cpp(31): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  ganzzahl addierer.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel\Kapitel 10 Datenstrukturen neu\ganzzahl addierer\Debug\ganzzahl addierer.exe
+  ganzzahl addierer.vcxproj -> C:\Users\jorda_000\SkyDrive\Programmieren\C++\Buch\Kapitel\Kapitel 10 Datenstrukturen neu\ganzzahl addierer\Debug\ganzzahl addierer.pdb (Partial PDB)
