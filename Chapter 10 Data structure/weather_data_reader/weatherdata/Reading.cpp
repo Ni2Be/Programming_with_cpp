@@ -38,8 +38,6 @@ std::istream& operator>>(std::istream& istr, Reading& reading) {
 	reading.hour = hh;
 	reading.measuring = measur;
 
-	std::cout << dd << " " << hh << " " << measur << "\n";
-
 	return istr;
 }
 
@@ -66,4 +64,33 @@ std::istream& operator>>(std::istream& istr, Dates::Month& month) {
 	}
 
 	return istr;
+}
+
+
+std::istream& operator>>(std::istream& istr, Dates::Year& year) {
+	std::string yearmarker;
+	if (!(istr >> yearmarker) || (yearmarker != "year")) {
+		istr.unget();
+		istr.clear(std::ios_base::failbit);
+		return istr;
+	}
+
+	int temp_year;
+	istr >> temp_year;
+
+	year.year = temp_year;
+	if (year.year == Dates::not_a_year) error("", "not a valid year");
+
+	Dates::Month tempMonth;
+
+	while (istr && istr.get() != '{');
+
+
+	//TODO needs loop
+	istr >> tempMonth;
+	year.months[tempMonth.month] = tempMonth;
+
+	return istr;
+
+
 }

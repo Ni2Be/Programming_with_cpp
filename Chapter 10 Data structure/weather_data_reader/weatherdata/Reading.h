@@ -18,3 +18,5 @@ public:
 std::istream& operator>>(std::istream& istr, Reading& reading);
 
 std::istream& operator>>(std::istream& istr, Dates::Month& month);
+
+std::istream& operator>>(std::istream& istr, Dates::Year& year);

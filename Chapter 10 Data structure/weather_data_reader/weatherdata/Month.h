@@ -4,7 +4,7 @@
 
 namespace Dates {
 	enum Months {
-		not_a_month, jan, feb, mar, apr, mey, jun, jul, aug, sep, oct, nov, dec
+		jan, feb, mar, apr, mey, jun, jul, aug, sep, oct, nov, dec, not_a_month
 	};
 
 	struct Month
