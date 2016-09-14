@@ -1,7 +1,10 @@
 #include <iostream>
 #include <iomanip>
 #include "error.h"
-
+#include <string>
+#include <sstream>
+#include <vector>
+#include <fstream>
 using namespace std;
 
 void keep_window_open() {
@@ -69,6 +72,39 @@ void field() {
 		<< setw(10) << 134 << '|' << setw(5) << 134 << '|' << endl;
 }
 
+void stringtest() {
+	string line;
+
+	cout << "Enter full name: ";
+	cin >> line;
+	cout << "cout1:" << line << endl;
+	getline(cin, line); //flush rest of line
+
+	cout << "Enter full name: ";
+	getline(cin, line);
+	cout << "cout2:" << line << endl;
+
+
+	stringstream linestream(line);
+	string firstname, lastname;
+	linestream >> firstname;
+	linestream >> lastname;
+	cout << "cout3:" << firstname << "," << lastname;
+}
+
+void string_to_oct() {
+	string message("https://www.youtube.com/watch?v=DLzxrzFCyOs");
+	vector<int> octals;
+	int octa;
+	stringstream messa;
+	string file = "test.txt";
+	ofstream ofi(file.c_str());
+	for (int i = 0; i < message.size(); i++) {
+		octa = message[i];
+		ofi << oct << octa << ' ';
+	}
+}
+
 
 int main() {
 	try {
@@ -78,6 +114,8 @@ int main() {
 		//in_format_test();
 		//floating_out();
 		//field();
+		//stringtest();
+		//string_to_oct();
 
 		keep_window_open();
 	}
