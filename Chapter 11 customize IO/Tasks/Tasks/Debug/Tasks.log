@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\programmieren\programming_with_cpp\chapter 11 customize io\tasks\tasks\main.cpp(52): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  Tasks.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Tasks\Debug\Tasks.exe
+  Tasks.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Tasks\Debug\Tasks.pdb (Partial PDB)
