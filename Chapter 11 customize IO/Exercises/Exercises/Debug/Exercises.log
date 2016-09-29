@@ -1,4 +1,7 @@
 ﻿  Text_manipulator.cpp
-c:\users\nice2bee\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(37): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-  Exercises.vcxproj -> C:\Users\Nice2Bee\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Exercises\Debug\Exercises.exe
-  Exercises.vcxproj -> C:\Users\Nice2Bee\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Exercises\Debug\Exercises.pdb (Partial PDB)
+d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(54): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(57): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(60): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(81): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  Exercises.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Exercises\Debug\Exercises.exe
+  Exercises.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Exercises\Debug\Exercises.pdb (Partial PDB)

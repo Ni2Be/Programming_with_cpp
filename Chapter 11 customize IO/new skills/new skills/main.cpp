@@ -96,13 +96,31 @@ void string_to_oct() {
 	string message("https://www.youtube.com/watch?v=DLzxrzFCyOs");
 	vector<int> octals;
 	int octa;
-	stringstream messa;
-	string file = "test.txt";
+	string file = "string_to_oct_test.txt";
 	ofstream ofi(file.c_str());
 	for (int i = 0; i < message.size(); i++) {
 		octa = message[i];
 		ofi << oct << octa << ' ';
 	}
+}
+
+void binary_output(string out_txt_name) {
+	ofstream ostr(out_txt_name.c_str(), ios_base::binary);
+	if (!ostr) error("main::binary_output", "culd not open " + out_txt_name);
+	vector<int> outInt = {1,2,3,4,5,6,7,8,9};
+
+	ostr.write((const char*)&outInt[0], sizeof(int) * outInt.size()); //(const char*)&outInt[i] take adress of the curr int and cast it to const char*
+}
+
+void binary_data_use(string file_name) {
+	fstream fstr(file_name.c_str(), ios::in | ios::out | ios::binary);
+	if (!fstr) error("main::binary_data_use", "culd not open " + file_name);
+
+	fstr.seekg(sizeof(int) * 8); // g = get -> reading position [byte1: 0 1 2 3| byte2: 4 5 6 7 ...]
+	int i;
+	fstr.read((char*)&i, sizeof(int));
+	fstr.seekp(sizeof(int)); // p = put -> writing position
+	fstr.write((const char*)&i, sizeof(int));
 }
 
 
@@ -116,6 +134,8 @@ int main() {
 		//field();
 		//stringtest();
 		//string_to_oct();
+		binary_output("binary");
+		binary_data_use("binary");
 
 		keep_window_open();
 	}
