@@ -1,8 +1,3 @@
-/*
-#TODO
-will implement streamstrings to handle whitespace
-*/
-
 #pragma once
 
 #include <iostream>
@@ -16,6 +11,11 @@ will implement streamstrings to handle whitespace
 namespace Text_manipulator
 {
 	using namespace std;
+
+	
 	void txt_to_lower(string in_txt_name, string out_txt_name);
+
+	// Input/output
+	//stringstream& data_to_String(string in_txt_name);
 	void txt_output(string& out_txt_name, string &ostring);
 };
