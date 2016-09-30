@@ -1,5 +1,12 @@
 ﻿  main.cpp
+<<<<<<< HEAD
 d:\programmieren\programming_with_cpp\chapter 11 customize io\tasks\tasks\main.cpp(54): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
 d:\programmieren\programming_with_cpp\chapter 11 customize io\tasks\tasks\main.cpp(63): error C3867: "IAudioClient::Initialize": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
 d:\programmieren\programming_with_cpp\chapter 11 customize io\tasks\tasks\main.cpp(64): error C3867: "IAudioClient::GetService": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
 d:\programmieren\programming_with_cpp\chapter 11 customize io\tasks\tasks\main.cpp(65): error C3867: "IAudioClient::Start": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
+=======
+c:\users\nice2bee\programmieren\programming_with_cpp\chapter 11 customize io\tasks\tasks\main.cpp(52): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  LINK : C:\Users\Nice2Bee\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Tasks\Debug\Tasks.exe wurde nicht gefunden oder beim letzten inkrementellen Linkvorgang nicht erstellt; vollständiger Link wird durchgeführt.
+  Tasks.vcxproj -> C:\Users\Nice2Bee\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Tasks\Debug\Tasks.exe
+  Tasks.vcxproj -> C:\Users\Nice2Bee\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Tasks\Debug\Tasks.pdb (Partial PDB)
+>>>>>>> refs/remotes/origin/master

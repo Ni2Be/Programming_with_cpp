@@ -1,0 +1,12 @@
+3	dezimal		is 	0x3	in hexadezimal
+4	dezimal		is 	0x4	in hexadezimal
+3	dezimal		is 	0x3	in hexadezimal
+444	dezimal		is 	0x1bc	in hexadezimal
+01	octal		is 	1	in dezimal
+05	octal		is 	5	in dezimal
+010	octal		is 	8	in dezimal
+06	octal		is 	6	in dezimal
+0x1	hexadezimal	is 	1	in dezimal
+0x2	hexadezimal	is 	2	in dezimal
+0x3	hexadezimal	is 	3	in dezimal
+0xf	hexadezimal	is 	15	in dezimal

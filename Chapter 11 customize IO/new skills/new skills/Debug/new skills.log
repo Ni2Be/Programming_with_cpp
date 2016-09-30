@@ -1,5 +1,4 @@
 ﻿  main.cpp
 d:\programmieren\programming_with_cpp\chapter 11 customize io\new skills\new skills\main.cpp(102): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-main.obj : warning LNK4075: /EDITANDCONTINUE wird aufgrund der Angabe von /OPT:LBR ignoriert.
   new skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\new skills\Debug\new skills.exe
   new skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\new skills\Debug\new skills.pdb (Partial PDB)
