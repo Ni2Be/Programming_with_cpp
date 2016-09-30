@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 
+#include <Audioclient.h>
+
 using namespace std;
 
 void error(string where, string what) {
@@ -58,6 +60,10 @@ int main() {
 	try {
 		//test_output();
 		table_test();
+		IAudioClient::Initialize;
+		IAudioClient::GetService;
+		IAudioClient::Start;
+
 
 		keep_window_open();
 	} catch(exception& e) {
