@@ -19,6 +19,7 @@ namespace Text_manipulator
 
 	string format_Table(vector<int> dec, vector<int> oct, vector<int> hex);
 
+
 	// Input/output
 	stringstream data_to_StringStream(string in_txt_name);
 	void txt_output(string& out_txt_name, string &ostring);

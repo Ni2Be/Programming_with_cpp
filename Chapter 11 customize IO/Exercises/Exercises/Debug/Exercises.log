@@ -1,11 +1,9 @@
-﻿  Text_manipulator.cpp
+﻿  main.cpp
+  Text_manipulator.cpp
 d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(54): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
 d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(57): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
 d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(60): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
 d:\programmieren\programming_with_cpp\chapter 11 customize io\exercises\exercises\text_manipulator.cpp(81): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-  main.cpp
-  error.cpp
   Code wird generiert...
-  LINK : D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Exercises\Debug\Exercises.exe wurde nicht gefunden oder beim letzten inkrementellen Linkvorgang nicht erstellt; vollständiger Link wird durchgeführt.
   Exercises.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Exercises\Debug\Exercises.exe
   Exercises.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 11 customize IO\Exercises\Debug\Exercises.pdb (Partial PDB)

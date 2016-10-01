@@ -1,0 +1,2 @@
+﻿  main.cpp
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\fl\fl_utf8.h(62): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "X11/Xlocale.h": No such file or directory

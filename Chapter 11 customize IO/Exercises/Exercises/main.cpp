@@ -20,7 +20,7 @@ int main() {
 		//string programString = "Here, I'm a String!";
 		//stringstream ss(programString);
 		//Text_manipulator::txt_to_lower(ss, "output2.txt");
-		Text_manipulator::txt_oct_hex_search(Text_manipulator::data_to_StringStream("hexOct.txt"), "dec.txt");
+		//Text_manipulator::txt_oct_hex_search(Text_manipulator::data_to_StringStream("hexOct.txt"), "dec.txt");
 
 		keep_window_open();
 		return 0;

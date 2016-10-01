@@ -1,0 +1,4 @@
+﻿  main.cpp
+main.obj : error LNK2019: Verweis auf nicht aufgel÷stes externes Symbol "__imp___invalid_parameter" in Funktion ""public: struct Graph_lib::Point & __thiscall std::vector<struct Graph_lib::Point,class std::allocator<struct Graph_lib::Point> >::operator[](unsigned int)" (??A?$vector@UPoint@Graph_lib@@V?$allocator@UPoint@Graph_lib@@@std@@@std@@QAEAAUPoint@Graph_lib@@I@Z)".
+main.obj : error LNK2019: Verweis auf nicht aufgel÷stes externes Symbol "__imp___CrtDbgReportW" in Funktion ""public: struct Graph_lib::Point & __thiscall std::vector<struct Graph_lib::Point,class std::allocator<struct Graph_lib::Point> >::operator[](unsigned int)" (??A?$vector@UPoint@Graph_lib@@V?$allocator@UPoint@Graph_lib@@@std@@@std@@QAEAAUPoint@Graph_lib@@I@Z)".
+D:\Programmieren\Programming_with_cpp\Chapter 12 simple gui\Win32Project1\Debug\Win32Project1.exe : fatal error LNK1120: 2 nicht aufgel÷ste Externe
