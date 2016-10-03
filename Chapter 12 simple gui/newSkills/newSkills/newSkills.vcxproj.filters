@@ -18,21 +18,27 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Window.h">
+      <Filter>Headerdateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GUI.h">
+    <ClInclude Include="Point.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Shape.h">
+    <ClInclude Include="std_lib_facilities.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Layout.h">
+    <ClInclude Include="fltk.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Widget.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Callbacks.h">
+    <ClInclude Include="Graph.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
