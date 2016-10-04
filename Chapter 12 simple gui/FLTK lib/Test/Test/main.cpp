@@ -1,15 +1,11 @@
-#pragma once
-#include <iostream>
-
-#include "Window.h"
+#include "IO_Window.h"
 
 
-int main() {
-	Graph_lib::Point p1(100, 100);
+using namespace TestGUI;
 
-	Graph_lib::Window window1(p1, 300, 300, "label");
-
-
-
+int main() 
+{
+	IO_Window window1(300, 200, "Test");
+	IO_Window window2(300, 200, "Test");
 	return Fl::run();
 }

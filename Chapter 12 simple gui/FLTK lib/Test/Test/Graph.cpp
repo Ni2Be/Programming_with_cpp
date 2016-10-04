@@ -57,7 +57,7 @@ namespace Graph_lib {
 		intersection.y = p1.y + u.first*(p2.y - p1.y);
 		return true;
 	}
-	/*
+
 	void Polygon::add(Point p)
 	{
 		int np = number_of_points();
@@ -118,8 +118,7 @@ namespace Graph_lib {
 			points[i].y += dy;
 		}
 	}
-	*/
-	
+	/*
 	void Lines::draw_lines() const
 	{
 		//	if (number_of_points()%2==1) error("odd number of points in set of lines");
@@ -127,7 +126,7 @@ namespace Graph_lib {
 			for (int i = 1; i<number_of_points(); i += 2)
 				fl_line(point(i - 1).x, point(i - 1).y, point(i).x, point(i).y);
 	}
-	/*
+	*/
 	void Text::draw_lines() const
 	{
 		int ofnt = fl_font();
@@ -136,13 +135,13 @@ namespace Graph_lib {
 		fl_draw(lab.c_str(), point(0).x, point(0).y);
 		fl_font(ofnt, osz);
 	}
-	
+
 	Function::Function(Fct f, double r1, double r2, Point xy, int count, double xscale, double yscale)
 		// graph f(x) for x in [r1:r2) using count line segments with (0,0) displayed at xy
 		// x coordinates are scaled by xscale and y coordinates scaled by yscale
 	{
-		//if (r2 - r1 <= 0) error("bad graphing range");
-		//if (count <= 0) error("non-positive graphing count");
+		if (r2 - r1 <= 0) error("bad graphing range");
+		if (count <= 0) error("non-positive graphing count");
 		double dist = (r2 - r1) / count;
 		double r = r1;
 		for (int i = 0; i<count; ++i) {
@@ -164,9 +163,8 @@ namespace Graph_lib {
 			fl_rect(point(0).x, point(0).y, w, h);
 		}
 	}
-	*/
-	/*
 
+	/*
 	Axis::Axis(Orientation d, Point xy, int length, int n, string lab)
 		:label(Point(0, 0), lab)
 	{
@@ -228,7 +226,7 @@ namespace Graph_lib {
 		notches.move(dx, dy);
 		label.move(dx, dy);
 	}
-
+	*/
 	void Circle::draw_lines() const
 	{
 		if (fill_color().visibility()) {	// fill
@@ -272,7 +270,6 @@ namespace Graph_lib {
 		for (int i = 0; i<number_of_points(); ++i)
 			draw_mark(point(i), mark[i%mark.size()]);
 	}
-	*/
 	/*
 	void Marks::draw_lines() const
 	{
@@ -281,7 +278,7 @@ namespace Graph_lib {
 	}
 	*/
 
-/*
+
 	std::map<string, Suffix::Encoding> suffix_map;
 
 	int init_suffix_map()
@@ -357,5 +354,5 @@ namespace Graph_lib {
 		else
 			p->draw(point(0).x, point(0).y);
 	}
-	*/
+
 } // Graph

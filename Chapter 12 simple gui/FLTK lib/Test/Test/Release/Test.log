@@ -1,0 +1,5 @@
+﻿  main.cpp
+LINK : warning LNK4098: Standardbibliothek "MSVCRTD" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.
+  Code wird generiert.
+  Codegenerierung ist abgeschlossen.
+  Test.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 12 simple gui\FLTK lib\Test\Release\Test.exe

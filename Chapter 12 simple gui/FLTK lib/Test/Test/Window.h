@@ -1,4 +1,4 @@
-#include <vector>
+#include "Vectorlists.h"
 
 #include "fltk.h"
 #include "Point.h"
@@ -31,7 +31,7 @@ namespace Graph_lib {
 		void draw();
 
 	private:
-		std::vector<Graph_lib::Shape*> shapes;	// shapes attached to window
+		vector<Graph_lib::Shape*> shapes;	// shapes attached to window
 		int w, h;					// window size
 
 		void init();
