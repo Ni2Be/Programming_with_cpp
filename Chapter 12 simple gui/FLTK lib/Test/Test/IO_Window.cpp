@@ -1,7 +1,5 @@
 #include "IO_Window.h"
 
-
-
 namespace TestGUI {
 
 	IO_Window::IO_Window(int w, int h, const char *title = 0) : Fl_Window(w, h, title)
@@ -10,7 +8,7 @@ namespace TestGUI {
 		resizable(this);
 
 		begin();
-		copyButton = new Fl_Button(10, h - 45, 100, 35, "Copy");
+		copyButton = new Fl_Button(10, h - 45, 100, 35, "Cop&y");
 		exitButton = new Fl_Button(120, h - 45, 100, 35, "E&xit");
 		inbox = new Fl_Input(w / 4, 10, 2 * w / 4, 35, "In:");
 		output = new Fl_Output(w / 4, 55, 2 * w / 4, 35, "Out:");

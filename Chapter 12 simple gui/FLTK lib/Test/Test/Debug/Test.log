@@ -1,2 +1,1 @@
-﻿  IO_Window.cpp
-  Test.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 12 simple gui\FLTK lib\Test\Debug\Test.exe
+﻿LINK : fatal error LNK1104: Datei "fltkd.lib" kann nicht geöffnet werden.
