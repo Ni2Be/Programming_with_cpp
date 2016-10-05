@@ -13,6 +13,7 @@ namespace TestGUI {
 		inbox = new Fl_Input(w / 4, 10, 2 * w / 4, 35, "In:");
 		output = new Fl_Output(w / 4, 55, 2 * w / 4, 35, "Out:");
 		end();
+		
 
 		copyButton->callback(cb_copyText, this);
 		exitButton->callback(cb_quit, this);

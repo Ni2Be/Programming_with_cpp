@@ -1,1 +1,3 @@
-﻿LINK : fatal error LNK1104: Datei "fltkd.lib" kann nicht geöffnet werden.
+﻿  IO_Window.cpp
+cl : Befehlszeile warning D9028: Fehler beim minimalen Neukompilieren, normale Erstellung wird durchgeführt.
+  Test.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 12 simple gui\FLTK lib\Test\Debug\Test.exe

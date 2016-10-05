@@ -11,6 +11,7 @@
 #include <FL/Fl_Input.H>
 #include <FL/Fl_Output.H>
 
+
 namespace TestGUI 
 {
 
@@ -28,6 +29,7 @@ namespace TestGUI
 		Fl_Button *exitButton;
 		Fl_Input *inbox;
 		Fl_Output *output;
+
 	private:
 		//WindowID not used at the Moment
 		int WindowID;
