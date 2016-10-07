@@ -45,6 +45,7 @@ namespace TestGUI {
 
 	void IO_Window::translateText(bool toHex)
 	{
+
 		string out = inbox->value();
 		if(toHex)
 			output->value(((const char*)Translator::string_to_hex(out).c_str()));
