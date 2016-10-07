@@ -1,4 +1,9 @@
 ﻿  IO_Window.cpp
+<<<<<<< HEAD
+=======
+  Translator.cpp
+Translator.cpp(11): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+>>>>>>> 3a45029086d4feee38b138d71bf0585adf6b41dc
   main.cpp
   Code wird generiert.
   Codegenerierung ist abgeschlossen.
