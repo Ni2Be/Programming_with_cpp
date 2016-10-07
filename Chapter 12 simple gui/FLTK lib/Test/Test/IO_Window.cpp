@@ -15,6 +15,7 @@ namespace TestGUI {
 		exitButton = new Fl_Button(120, h - 45, 100, 35, "Exit");
 		inbox = new Fl_Input(w / 4, 10, 2 * w / 4, 35, "In:");
 		output = new Fl_Output(w / 4, 55, 2 * w / 4, 35, "Out:");
+		l1 = new Draw::Line(10, 10, 100, 10);
 		end();
 		
 		translateButton->callback(cb_translateText_hex, this);

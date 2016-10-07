@@ -12,6 +12,7 @@
 #include <FL/Fl_Output.H>
 
 #include "Translator.h"
+#include "Shape.h"
 
 
 namespace TestGUI 
@@ -33,7 +34,7 @@ namespace TestGUI
 		Fl_Button *exitButton;
 		Fl_Input *inbox;
 		Fl_Output *output;
-
+		Draw::Line *l1;
 	private:
 		//WindowID not used at the Moment
 		int WindowID;
