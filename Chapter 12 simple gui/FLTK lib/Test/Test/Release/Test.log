@@ -1,7 +1,7 @@
 ﻿  IO_Window.cpp
-d:\programmieren\programming_with_cpp\chapter 12 simple gui\fltk lib\test\test\IO_Window.h(26): warning C4068: Unbekanntes Pragma
+  Translator.cpp
+Translator.cpp(11): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
   main.cpp
-d:\programmieren\programming_with_cpp\chapter 12 simple gui\fltk lib\test\test\IO_Window.h(26): warning C4068: Unbekanntes Pragma
   Code wird generiert.
   Codegenerierung ist abgeschlossen.
 fltk.lib(case.obj) : warning LNK4099: PDB "vc140.pdb" wurde nicht mit "fltk.lib(case.obj)" oder an "D:\Programmieren\Programming_with_cpp\Chapter 12 simple gui\FLTK lib\Test\Release\vc140.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
