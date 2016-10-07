@@ -29,6 +29,9 @@ namespace TestGUI
 		~IO_Window() {}
 
 		//TODO Widget vactor implementation
+		void attatch(Fl_Widget *w);
+		void attatchButton(Fl_Widget *w);
+
 		Fl_Button *translateButton;
 		Fl_Button *translateButton2;
 		Fl_Button *exitButton;
@@ -36,9 +39,12 @@ namespace TestGUI
 		Fl_Output *output;
 		Draw::Line *l1;
 	private:
+		vector<Fl_Widget*> widgets;
+		vector<Fl_Widget*> shapes;
+
 		//WindowID not used at the Moment
 		int WindowID;
-
+		void draw();
 		static void cb_quit(Fl_Widget* w, void* v);
 		static void cb_translateText(Fl_Widget* w, void* window);
 		static void cb_translateText_hex(Fl_Widget* w, void* window);

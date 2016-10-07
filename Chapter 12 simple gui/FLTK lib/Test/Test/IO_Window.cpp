@@ -8,14 +8,12 @@ namespace TestGUI {
 	{
 		WindowID = globalWindowID++;
 		resizable(this);
-		
 		begin();
 		translateButton = new Fl_Button(10, h - 45, 100, 35, "He&x!");
 		translateButton2 = new Fl_Button(230, h - 45, 100, 35, "St&ring!");
 		exitButton = new Fl_Button(120, h - 45, 100, 35, "Exit");
 		inbox = new Fl_Input(w / 4, 10, 2 * w / 4, 35, "In:");
 		output = new Fl_Output(w / 4, 55, 2 * w / 4, 35, "Out:");
-		l1 = new Draw::Line(10, 10, 100, 10);
 		end();
 		
 		translateButton->callback(cb_translateText_hex, this);
@@ -24,7 +22,22 @@ namespace TestGUI {
 		exitButton->callback(cb_quit, this);
 		
 		callback(cb_quit, this);
+		
 		show();
+		
+	}
+
+	void IO_Window::attatch(Fl_Widget *w) 
+	{
+		//begin();
+		widgets.push_back(w);
+		//end();
+	}
+
+	void IO_Window::draw()
+	{
+		Fl_Window::draw();
+		for (unsigned int i = 0; i<widgets.size(); ++i) widgets[i]->draw();
 	}
 
 	void IO_Window::cb_quit(Fl_Widget* w, void* v)
