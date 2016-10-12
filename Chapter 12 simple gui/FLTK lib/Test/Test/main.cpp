@@ -11,7 +11,11 @@ int main()
 	for (int i = 0; i < 1; i++) {
 		window1 = new IO_Window(w, h, "Test");
 	}
-	//window1->attatch(new Draw::Line(0, 50, 150, 50));
-	
+	//DEBUG
+	for (int i = 0; i < 100; i++)
+	{
+		window1->attatch(new Draw::Line(0, i * 1, 150 - 1, 50));
+	}
+	//ENDDEBUG
 	return Fl::run();
 }
