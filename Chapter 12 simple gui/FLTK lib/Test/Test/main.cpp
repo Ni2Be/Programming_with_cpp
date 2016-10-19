@@ -8,6 +8,9 @@ int main()
 {
 	const int h = 180, w = 350;
 	IO_Window *window1;
+
+	window1 = (IO_Window*) malloc(sizeof(IO_Window));//no sense, just a try
+
 	for (int i = 0; i < 1; i++) {
 		window1 = new IO_Window(w, h, "Test");
 	}
