@@ -1,0 +1,12 @@
+﻿  main.cpp
+  Code wird generiert.
+  10 of 16 functions (62.5%) were compiled, the rest were copied from previous compilation.
+    9 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Codegenerierung ist abgeschlossen.
+fltk.lib(case.obj) : warning LNK4099: PDB "vc140.pdb" wurde nicht mit "fltk.lib(case.obj)" oder an "D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Release\vc140.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+fltk.lib(fl_call_main.obj) : warning LNK4099: PDB "vc140.pdb" wurde nicht mit "fltk.lib(fl_call_main.obj)" oder an "D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Release\vc140.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+fltk.lib(fl_utf.obj) : warning LNK4099: PDB "vc140.pdb" wurde nicht mit "fltk.lib(fl_utf.obj)" oder an "D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Release\vc140.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+fltk.lib(fl_utf8.obj) : warning LNK4099: PDB "vc140.pdb" wurde nicht mit "fltk.lib(fl_utf8.obj)" oder an "D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Release\vc140.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+fltk.lib(is_spacing.obj) : warning LNK4099: PDB "vc140.pdb" wurde nicht mit "fltk.lib(is_spacing.obj)" oder an "D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Release\vc140.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+  new Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Release\new Skills.exe
