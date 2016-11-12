@@ -3,27 +3,21 @@
 
 using namespace std;
 
-namespace Animal
+namespace Fauna
 {
-	string Animal::make_sound()
-	{
-		return "hallo";
-	}
 	string Animal::get_sound()
 	{
-		return "hallo";
+		return sound + " Animal";
 	}
 
-	Animal::Animal()
+	string Animal::get_name()
 	{
-
+		return "Name: " + name;
 	}
 
-	Cat::Cat()
+
+	string Mouse::get_sound()
 	{
-	}
-	string Cat::get_sound()
-	{
-		return "hallo";
+		return sound + " Mouse";
 	}
 }

@@ -1,7 +1,9 @@
-﻿  main.cpp
+﻿  Animal.cpp
   Code wird generiert...
   Kompilieren...
-  Handling.cpp
+  main.cpp
+d:\programmieren\programming_with_cpp\chapter 14 classes\new skills\new skills\main.cpp(33): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 14 classes\new skills\new skills\main.cpp(44): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
   Code wird generiert...
-MSVCRTD.lib(exe_winmain.obj) : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_WinMain@16" in Funktion ""int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)".
-D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Debug\new Skills.exe : fatal error LNK1120: 1 nicht aufgelöste Externe
+cl : Befehlszeile warning D9028: Fehler beim minimalen Neukompilieren, normale Erstellung wird durchgeführt.
+  new Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 14 classes\new Skills\Debug\new Skills.exe
