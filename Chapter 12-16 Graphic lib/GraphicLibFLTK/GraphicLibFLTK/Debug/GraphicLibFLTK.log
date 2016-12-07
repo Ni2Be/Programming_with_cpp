@@ -1,20 +1,4 @@
-﻿  Shape.cpp
-  main.cpp
-  IO_Window.cpp
-  Code wird generiert...
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: void __thiscall Fl_Group::begin(void)" (?begin@Fl_Group@@QAEXXZ)" in Funktion ""public: __thiscall TestGUI::IO_Window::IO_Window(int,int,char const *)" (??0IO_Window@TestGUI@@QAE@HHPBD@Z)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: void __thiscall Fl_Group::end(void)" (?end@Fl_Group@@QAEXXZ)" in Funktion ""public: __thiscall TestGUI::IO_Window::IO_Window(int,int,char const *)" (??0IO_Window@TestGUI@@QAE@HHPBD@Z)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""protected: virtual void __thiscall Fl_Window::draw(void)" (?draw@Fl_Window@@MAEXXZ)" in Funktion ""private: virtual void __thiscall TestGUI::IO_Window::draw(void)" (?draw@IO_Window@TestGUI@@EAEXXZ)".
-IO_Window.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""protected: virtual void __thiscall Fl_Window::flush(void)" (?flush@Fl_Window@@MAEXXZ)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: __thiscall Fl_Window::Fl_Window(int,int,char const *)" (??0Fl_Window@@QAE@HHPBD@Z)" in Funktion ""public: __thiscall TestGUI::IO_Window::IO_Window(int,int,char const *)" (??0IO_Window@TestGUI@@QAE@HHPBD@Z)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: virtual __thiscall Fl_Window::~Fl_Window(void)" (??1Fl_Window@@UAE@XZ)" in Funktion "__unwindfunclet$??0IO_Window@TestGUI@@QAE@HHPBD@Z$0".
-IO_Window.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual int __thiscall Fl_Window::handle(int)" (?handle@Fl_Window@@UAEHH@Z)".
-IO_Window.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Fl_Window::resize(int,int,int,int)" (?resize@Fl_Window@@UAEXHHHH@Z)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Fl_Window::show(void)" (?show@Fl_Window@@UAEXXZ)" in Funktion ""public: __thiscall TestGUI::IO_Window::IO_Window(int,int,char const *)" (??0IO_Window@TestGUI@@QAE@HHPBD@Z)".
-IO_Window.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""public: virtual void __thiscall Fl_Window::hide(void)" (?hide@Fl_Window@@UAEXXZ)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: __thiscall Fl_Button::Fl_Button(int,int,int,int,char const *)" (??0Fl_Button@@QAE@HHHHPBD@Z)" in Funktion ""public: __thiscall TestGUI::IO_Window::IO_Window(int,int,char const *)" (??0IO_Window@TestGUI@@QAE@HHPBD@Z)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: __thiscall Fl_Input::Fl_Input(int,int,int,int,char const *)" (??0Fl_Input@@QAE@HHHHPBD@Z)" in Funktion ""public: __thiscall TestGUI::IO_Window::IO_Window(int,int,char const *)" (??0IO_Window@TestGUI@@QAE@HHPBD@Z)".
-IO_Window.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: __thiscall Fl_Output::Fl_Output(int,int,int,int,char const *)" (??0Fl_Output@@QAE@HHHHPBD@Z)" in Funktion ""public: __thiscall TestGUI::IO_Window::IO_Window(int,int,char const *)" (??0IO_Window@TestGUI@@QAE@HHPBD@Z)".
-main.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: static int __cdecl Fl::run(void)" (?run@Fl@@SAHXZ)" in Funktion "_main".
-Shape.obj : error LNK2001: Nicht aufgelöstes externes Symbol ""class Fl_Graphics_Driver * fl_graphics_driver" (?fl_graphics_driver@@3PAVFl_Graphics_Driver@@A)".
-D:\Programmieren\Programming_with_cpp\Chapter 12-16 Graphic lib\GraphicLibFLTK\Debug\GraphicLibFLTK.exe : fatal error LNK1120: 15 nicht aufgelöste Externe
+﻿  main.cpp
+d:\programmieren\programming_with_cpp\chapter 12-16 graphic lib\graphiclibfltk\graphiclibfltk\main.cpp(41): error C2065: "M_PI": nichtdeklarierter Bezeichner
+d:\programmieren\programming_with_cpp\chapter 12-16 graphic lib\graphiclibfltk\graphiclibfltk\main.cpp(56): warning C4244: "Initialisierung": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+d:\programmieren\programming_with_cpp\chapter 12-16 graphic lib\graphiclibfltk\graphiclibfltk\main.cpp(122): warning C4244: "Argument": Konvertierung von "double" in "GLfloat", möglicher Datenverlust

@@ -1,0 +1,10 @@
+﻿  main.cpp
+main.cpp(58): warning C4244: "Initialisierung": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+main.cpp(124): warning C4244: "Argument": Konvertierung von "double" in "GLfloat", möglicher Datenverlust
+LINK : warning LNK4098: Standardbibliothek "MSVCRTD" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.
+  Code wird generiert.
+  2 of 51 functions ( 3.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Codegenerierung ist abgeschlossen.
+  GraphicLibFLTK.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 12-16 Graphic lib\GraphicLibFLTK\Release\GraphicLibFLTK.exe
