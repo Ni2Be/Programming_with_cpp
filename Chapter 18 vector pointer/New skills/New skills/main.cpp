@@ -26,8 +26,8 @@ void Vf(vector<int>&);
 
 int main()
 {
-	//array_test();
-	//vector_test();
+	array_test();
+	vector_test();
 	//consturctor_test();
 	//vec_test();
 	char ch;
