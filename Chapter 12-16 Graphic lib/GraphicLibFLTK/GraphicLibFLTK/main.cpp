@@ -1,204 +1,109 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
-
 #include <stdio.h>
+#include <time.h>
+#include <chrono>
+
 #include <FL/Fl.H>
-#include <FL/Fl_Window.H>
-#include <FL/Fl_Gl_Window.H>
-#include <FL/gl.h>
-//
-// OpenGL spinning cube with checker texturemap -- erco/loic 03/17/09
-//
+#include <FL/Fl_Double_Window.H>
+#include <FL/Fl_Box.H>
+#include <FL/fl_draw.H>
+
 #define WIN_W 400       // window width
 #define WIN_H 400       // window height
-#define TEX_W 64        // texturemap width
-#define TEX_H 64        // texturemap height
 #define FPS (1.0/24.0)  // frames per second playback
-//
-// OpenGL class to show texturemapped cube
-//
-class MyGlWindow : public Fl_Gl_Window {
-	double spin;
-	GLuint TexID;
-	// TIMER CALLBACK
-	//    Handles rotation the object
-	//
-	static void Timer_CB(void *userdata) {
-		MyGlWindow *mygl = (MyGlWindow*)userdata;
-		mygl->spin += 2.0;       // spin
-		mygl->redraw();
+#define BG_COLOR 45		// grey
+#define FG_COLOR 0		// Black
+
+class Crane : public Fl_Box
+{
+private:
+	int R_color_key = 0;
+	int G_color_key = 0;
+	int B_color_key = 0;
+	bool go_back = false;
+	void draw() override
+	{
+		// COMPUTE NEW COORDS OF BALL
+		using namespace std::chrono;
+		milliseconds ms = duration_cast< milliseconds >(
+			system_clock::now().time_since_epoch()
+			);
+		static long start = ms.count();
+		long tick = (ms.count() - start) % 3700;
+		int x1 = (int)(tick / 10),
+			y1 = (int)(tick / 10),
+			x2 = (int)(tick / 10),
+			y2 = (int)(tick / 10);
+
+		Fl_Box::draw();
+		// DRAW 'SECOND HAND' OVER WIDGET'S BACKGROUND
+		fl_color(R_color_key, G_color_key, B_color_key);
+		if (R_color_key >= G_color_key && !go_back)
+		{
+			if (R_color_key == 254)
+			{
+				if (B_color_key == 254)
+				{
+					if (G_color_key != 254)
+						G_color_key++;
+				}
+				else
+					B_color_key++;
+			}
+			else
+				R_color_key++;
+		}
+		if (R_color_key <= G_color_key && go_back)
+		{
+			if (R_color_key == 0)
+			{
+				if (B_color_key == 0)
+				{
+					if (G_color_key != 0)
+						G_color_key--;
+				}
+				else
+					B_color_key--;
+			}
+			else
+				R_color_key--;
+		}
+		if ((R_color_key == 254 && G_color_key == 254 && B_color_key == 254)
+			|| (R_color_key == 0 && G_color_key == 0 && B_color_key == 0))
+			go_back = go_back ^ 1;
+
+		fl_pie(x2 - 10, y2 - 10, y2 / 2, x2 / 2, 0.0, 360.0);
+
+
+		// DRAW DEBUG
+		fl_color(FG_COLOR);
+		fl_font(FL_HELVETICA, 16);
+		char debug[80]; 
+		sprintf(debug, "%02ld:%02ld:%02ld:%02ld:%02ld", tick / 10, R_color_key, G_color_key, B_color_key, go_back);
+		fl_draw(debug, x() + 4, y() + h() - 4);
+	}
+	static void Timer_CB(void *userdata)
+	{
+		Crane *o = (Crane*)userdata;
+		o->redraw();
 		Fl::repeat_timeout(FPS, Timer_CB, userdata);
 	}
 public:
-	// CTOR
-	MyGlWindow(int x, int y, int w, int h, const char *l = 0) : Fl_Gl_Window(x, y, w, h, l) {
-		spin = 0.0;
-		Fl::add_timeout(FPS, Timer_CB, (void*)this);       // 24fps timer
-	}
-	// PERSPECTIVE VIEW
-	//    Same as gluPerspective()..
-	//
-	void Perspective(GLdouble fovy, GLdouble aspect, GLdouble zNear, GLdouble zFar) {
-		GLdouble xmin, xmax, ymin, ymax;
-		ymax = zNear * tan(fovy * M_PI / 360.0);
-		ymin = -ymax;
-		xmin = ymin * aspect;
-		xmax = ymax * aspect;
-		glFrustum(xmin, xmax, ymin, ymax, zNear, zFar);
-	}
-	// RESHAPED VIEWPORT
-	//     OpenGL stuff to do whenever window changes size
-	//
-	void ReshapeViewport() {
-		// Viewport
-		glViewport(0, 0, w(), h());
-		// Projection
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		GLfloat ratio = w() / h();
-		Perspective(30.0, 1.0*ratio, 1.0, 30.0);
-		glTranslatef(0.0, 0.0, -8.0);
-		// Model view
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();
-	}
-	// OPENGL INITIALIZATION
-	//    OpenGL stuff to do *only once* on startup.
-	//
-	void GlInit() {
-		// Make sure we only do this once
-		static int first_time = 1;
-		if (first_time) {
-			first_time = 0;
-			// Texture Map Init
-			GLubyte img[TEX_W][TEX_H][3]; // after glTexImage2D(), array is no longer needed
-			glGenTextures(1, &TexID);
-			glBindTexture(GL_TEXTURE_2D, TexID);
-
-			/*** Texture Mapping Mode
-			***    Uncomment one of the following lines: GL_DECAL or GL_MODULATE
-			***/
-			//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);   // use actual texture colors
-			glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);  // texture colors affected by poly's color
-
-			for (int x = 0; x<TEX_W; x++) {
-				for (int y = 0; y<TEX_H; y++) {
-
-					/*** Texture Pattern
-					***     Uncomment one of the following lines: checkboard or basketweave
-					***/
-					//GLubyte c = ((x&16)^(y&16)) ? ((x%16)<<4) : (((x%16)^15)<<4); // basket weave
-					GLubyte c = ((x & 16) ^ (y & 16)) ? 255 : 0;                          // checkerboard
-
-					img[x][y][0] = c;
-					img[x][y][1] = c;
-					img[x][y][2] = c;
-				}
-			}
-			glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, TEX_W, TEX_H, 0, GL_RGB, GL_UNSIGNED_BYTE, &img[0][0][0]);
-			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			glEnable(GL_TEXTURE_2D);
-			// Misc OpenGL settings
-			glShadeModel(GL_FLAT);
-			glEnable(GL_DEPTH_TEST);
-			glDepthFunc(GL_LEQUAL);
-		}
-	}
-	// FLTK DRAW
-	//    Called by FLTK to draw the scene.
-	//
-	void draw() {
-		// Initialize/handle reshaped viewport
-		if (!valid()) {
-			valid(1);
-			GlInit();
-			ReshapeViewport();
-		}
-		// Clear
-		glClearColor(.5, .5, .5, 0.0);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		// Setup model matrix
-		glLoadIdentity();
-		glRotatef(spin, 0.5, 1.0, 0.0); // show all sides of cube
-										// Draw cube with texture assigned to each face
-		glBegin(GL_QUADS);
-		// Front Face
-		glColor3f(1.0, 0.0, 0.0); // red
-		glTexCoord2f(0.0, 1.0); glVertex3f(-1.0, 1.0, 1.0); // Top Left Of The Texture and Quad
-		glTexCoord2f(1.0, 1.0); glVertex3f(1.0, 1.0, 1.0); // Top Right Of The Texture and Quad
-		glTexCoord2f(1.0, 0.0); glVertex3f(1.0, -1.0, 1.0); // Bottom Right Of The Texture and Quad
-		glTexCoord2f(0.0, 0.0); glVertex3f(-1.0, -1.0, 1.0); // Bottom Left Of The Texture and Quad
-															 // Back Face
-		glColor3f(0.0, 1.0, 1.0); // cyn
-		glTexCoord2f(0.0, 1.0); glVertex3f(1.0, 1.0, -1.0); // Top Left Of The Texture and Quad
-		glTexCoord2f(1.0, 1.0); glVertex3f(-1.0, 1.0, -1.0); // Top Right Of The Texture and Quad
-		glTexCoord2f(1.0, 0.0); glVertex3f(-1.0, -1.0, -1.0); // Bottom Right Of The Texture and Quad
-		glTexCoord2f(0.0, 0.0); glVertex3f(1.0, -1.0, -1.0); // Bottom Left Of The Texture and Quad
-															 // Top Face
-		glColor3f(0.0, 1.0, 0.0); // grn
-		glTexCoord2f(0.0, 1.0); glVertex3f(-1.0, 1.0, -1.0); // Top Left Of The Texture and Quad
-		glTexCoord2f(1.0, 1.0); glVertex3f(1.0, 1.0, -1.0); // Top Right Of The Texture and Quad
-		glTexCoord2f(1.0, 0.0); glVertex3f(1.0, 1.0, 1.0); // Bottom Right Of The Texture and Quad
-		glTexCoord2f(0.0, 0.0); glVertex3f(-1.0, 1.0, 1.0); // Bottom Left Of The Texture and Quad
-															// Bottom Face
-		glColor3f(1.0, 0.0, 1.0); // mag
-		glTexCoord2f(0.0, 1.0); glVertex3f(1.0, -1.0, -1.0); // Top Left Of The Texture and Quad
-		glTexCoord2f(1.0, 1.0); glVertex3f(-1.0, -1.0, -1.0); // Top Right Of The Texture and Quad
-		glTexCoord2f(1.0, 0.0); glVertex3f(-1.0, -1.0, 1.0); // Bottom Right Of The Texture and Quad
-		glTexCoord2f(0.0, 0.0); glVertex3f(1.0, -1.0, 1.0); // Bottom Left Of The Texture and Quad
-															// Right face
-		glColor3f(0.0, 0.0, 1.0); // blu
-		glTexCoord2f(0.0, 1.0); glVertex3f(1.0, 1.0, 1.0); // Top Left Of The Texture and Quad
-		glTexCoord2f(1.0, 1.0); glVertex3f(1.0, 1.0, -1.0); // Top Right Of The Texture and Quad
-		glTexCoord2f(1.0, 0.0); glVertex3f(1.0, -1.0, -1.0); // Bottom Right Of The Texture and Quad
-		glTexCoord2f(0.0, 0.0); glVertex3f(1.0, -1.0, 1.0); // Bottom Left Of The Texture and Quad
-															// Left Face
-		glColor3f(1.0, 1.0, 0.0); // yel
-		glTexCoord2f(0.0, 1.0); glVertex3f(-1.0, 1.0, -1.0); // Top Left Of The Texture and Quad
-		glTexCoord2f(1.0, 1.0); glVertex3f(-1.0, 1.0, 1.0); // Top Right Of The Texture and Quad
-		glTexCoord2f(1.0, 0.0); glVertex3f(-1.0, -1.0, 1.0); // Bottom Right Of The Texture and Quad
-		glTexCoord2f(0.0, 0.0); glVertex3f(-1.0, -1.0, -1.0); // Bottom Left Of The Texture and Quad
-		glEnd();
-		// DEBUG: CHECK FOR ERRORS
-		GLenum err = glGetError();
-		if (err != GL_NO_ERROR) {
-			fprintf(stderr, "GLGETERROR=%d\n", (int)err);
-		}
+	Crane(int X, int Y, int W, int H, const char*L = 0) : Fl_Box(X, Y, W, H, L)
+	{
+		box(FL_FLAT_BOX);
+		color(BG_COLOR);
+		Fl::add_timeout(FPS, Timer_CB, (void*)this);
 	}
 };
-int main(int argc, char *argv[]) {
-	MyGlWindow* mygl = new MyGlWindow(10, 10, WIN_W - 20, WIN_H - 20, "Texture Test");
-	mygl->end();
-	mygl->resizable(mygl);
-	mygl->show();
-	return(Fl::run());
-}
-/*
-
-#include "IO_Window.h"
-#include <iostream>
-
-using namespace TestGUI;
 
 
-int main() 
+int main()
 {
-	const int h = 180, w = 350;
-	IO_Window *window1;
-
-	window1 = (IO_Window*) malloc(sizeof(IO_Window));//no sense, just a try
-
-	//DEBUG
-	for (int i = 0; i < 2; i++) {
-		window1 = new IO_Window(w, h, "Test");
-	}
-	//for (int i = 0; i < 100; i++)
-	//{
-	//	window1->attatch(new Draw::Line(0, i * 1, 150 - 1, 50));
-	//}
-	//ENDDEBUG
+	Fl_Double_Window win(WIN_W, WIN_H);
+	Crane crane(10, 10, WIN_W - 20, WIN_H - 20);
+	win.show();
 	return Fl::run();
 }
-*/
+

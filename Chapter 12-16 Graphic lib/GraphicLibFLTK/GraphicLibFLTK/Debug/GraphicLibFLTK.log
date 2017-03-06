@@ -1,4 +1,2 @@
 ﻿  main.cpp
-d:\programmieren\programming_with_cpp\chapter 12-16 graphic lib\graphiclibfltk\graphiclibfltk\main.cpp(41): error C2065: "M_PI": nichtdeklarierter Bezeichner
-d:\programmieren\programming_with_cpp\chapter 12-16 graphic lib\graphiclibfltk\graphiclibfltk\main.cpp(56): warning C4244: "Initialisierung": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
-d:\programmieren\programming_with_cpp\chapter 12-16 graphic lib\graphiclibfltk\graphiclibfltk\main.cpp(122): warning C4244: "Argument": Konvertierung von "double" in "GLfloat", möglicher Datenverlust
+  GraphicLibFLTK.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 12-16 Graphic lib\GraphicLibFLTK\Debug\GraphicLibFLTK.exe
