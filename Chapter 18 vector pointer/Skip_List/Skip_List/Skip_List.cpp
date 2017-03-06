@@ -3,7 +3,9 @@
 
 void Skip_List::add(int key)
 {
-
+	if (root == 0)
+		root = new Skip_Node(key);
+	
 }
 
 bool Skip_List::del(int key)

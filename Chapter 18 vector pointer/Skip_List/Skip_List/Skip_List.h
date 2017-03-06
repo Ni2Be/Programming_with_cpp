@@ -19,6 +19,8 @@ class Skip_Node
 private:
 	Skip_Node()
 		:key(), next() {}
+	Skip_Node(int k)
+		:key(k), next() {}
 	std::vector<Skip_Node*> next;
 	int key;
 };
@@ -27,9 +29,7 @@ class Skip_List
 {
 public:
 	Skip_List()
-	{
-		root = new Skip_Node();
-	}
+	:root(0) {}
 	~Skip_List()
 	{
 		delete_tree();
@@ -64,7 +64,8 @@ private:
 
 	/**
 	Goes through the list till it findes the searched key
-	and returns the Node reference.
+	and returns the Node reference or the node to its left 
+	if there is no node with the searchd key.
 
 	@param searched key
 	@return Node reference
