@@ -21,6 +21,9 @@ private:
 		:key(), next() {}
 	Skip_Node(int k)
 		:key(k), next() {}
+	Skip_Node(Skip_Node& node)
+		:key(node.key), next(node.next) {}
+
 	std::vector<Skip_Node*> next;
 	int key;
 };
@@ -60,6 +63,7 @@ public:
 	*/
 	int search(int key);
 private:
+	const int MAXLEVEL = 25;
 	Skip_Node* root;
 
 	/**
@@ -70,7 +74,7 @@ private:
 	@param searched key
 	@return Node reference
 	*/
-	Skip_Node& intern_search(int key);
+	Skip_Node& intern_search(int key, std::vector<Skip_Node*>&);
 	
 	/**
 	Goes through every node of the list 
@@ -82,10 +86,15 @@ private:
 	void delete_tree();
 	
 	/**
-	Generates true with a probability of 0.25.
+	Generates a number that stands for the level
+	of a new node. 
+	The chance to go 
+	to level 2 is 0.25,
+	to level 3 is 0.25²
+	and so on.
 
 	@param none
-	@return bool
+	@return integer 1 to MAXLEVEL
 	*/
-	bool coin_flip(); 
+	int determine_level(); 
 };
