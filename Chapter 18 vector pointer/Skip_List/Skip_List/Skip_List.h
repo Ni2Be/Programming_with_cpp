@@ -1,6 +1,6 @@
 /**
-Skip_List.h
-Purpose: 
+*Skip_List.h
+*Purpose: 
 Skip List with the functions to
 add: add(int key), get front elem: front() 
 and pop front elem: pop_front().
@@ -11,11 +11,13 @@ goes from 0 to MAXLEVEL - 1
 where MAXLEVEL - 1 is the bottem of the list
 and 0 is the top:
 
-0				| o - - - - - -
-1				| o - - o - - -
-[...]			| o - - o - - -
-MAXLEVEL - 2	| o - o o - o -
-MAXLEVEL - 1	| o o o o o o o
+<pre>
+ 0				| o - - - - - -
+ 1				| o - - o - - -
+ [...]			| o - - o - - -
+ MAXLEVEL - 2	| o - o o - o -
+ MAXLEVEL - 1	| o o o o o o o
+</pre>
 
 @author Jordan
 @version 1.0 03/02/17
@@ -62,6 +64,9 @@ namespace N2B
 
 		@param Key of the new Node
 		@return none
+
+		@see N2B::Skip_List::intern_search()
+		@see N2B::Skip_List::insert_node()
 		*/
 		void add(int key);
 
@@ -117,6 +122,8 @@ namespace N2B
 
 		@param none
 		@return none
+
+		@see N2B::Skip_List::pop_front()
 		*/
 		void delete_tree();
 
