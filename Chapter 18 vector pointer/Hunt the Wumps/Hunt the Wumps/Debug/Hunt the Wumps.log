@@ -1,10 +1,41 @@
-﻿  Labyrinth.cpp
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(61): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(64): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(66): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(68): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(79): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(126): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(128): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-  Hunt the Wumps.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Hunt the Wumps\Debug\Hunt the Wumps.exe
-  Hunt the Wumps.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Hunt the Wumps\Debug\Hunt the Wumps.pdb (Partial PDB)
+﻿  main.cpp
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(17): error C2248: "N2B::Actor::position": Kein Zugriff auf private Member, dessen Deklaration in der N2B::Actor-Klasse erfolgte.
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(46): note: Siehe Deklaration von "N2B::Actor::position"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(39): note: Siehe Deklaration von "N2B::Actor"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(20): error C2039: "bat_inside": Ist kein Element von "N2B::Room"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(26): note: Siehe Deklaration von "N2B::Room"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(24): error C2039: "wumpus_inside": Ist kein Element von "N2B::Room"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(26): note: Siehe Deklaration von "N2B::Room"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(29): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(32): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(50): error C2248: "N2B::Actor::position": Kein Zugriff auf private Member, dessen Deklaration in der N2B::Actor-Klasse erfolgte.
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(46): note: Siehe Deklaration von "N2B::Actor::position"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(39): note: Siehe Deklaration von "N2B::Actor"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(55): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(59): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\main.cpp(70): warning C4018: ">=": Konflikt zwischen "signed" und "unsigned"
+  Labyrinth.cpp
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(83): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(86): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(88): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(90): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(101): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(147): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(155): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(158): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(163): error C2039: "bat_inside": Ist kein Element von "N2B::Room"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(26): note: Siehe Deklaration von "N2B::Room"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(164): error C2039: "player_inside": Ist kein Element von "N2B::Room"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(26): note: Siehe Deklaration von "N2B::Room"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(165): error C2039: "wumpus_inside": Ist kein Element von "N2B::Room"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(26): note: Siehe Deklaration von "N2B::Room"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(189): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(191): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(264): error C2248: "N2B::Actor::what": Kein Zugriff auf private Member, dessen Deklaration in der N2B::Actor-Klasse erfolgte.
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(45): note: Siehe Deklaration von "N2B::Actor::what"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(39): note: Siehe Deklaration von "N2B::Actor"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(264): error C2451: Bedingter Ausdruck des Typs "std::string" nicht zulässig
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(264): note: Kein benutzerdefinierter Konvertierungsoperator verfügbar, der diese Konvertierung durchführen kann, oder der Operator kann nicht aufgerufen werden
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(267): error C2039: "wumpus_inside": Ist kein Element von "N2B::Room"
+  d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.h(26): note: Siehe Deklaration von "N2B::Room"
+  Code wird generiert...
