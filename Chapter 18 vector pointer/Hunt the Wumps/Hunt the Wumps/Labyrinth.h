@@ -1,11 +1,3 @@
-/**
-If the program does not work, it is probably becouse of the
-random_device, just use an onther random number generator.
-
-@author Jordan
-@version 0.2 02/14/17 
-*/
-
 #pragma once
 #include <vector>
 #include <random>
@@ -13,6 +5,12 @@ random_device, just use an onther random number generator.
 #include <algorithm>
 #include <iterator>
 #include <sstream>
+#include <stdlib.h>
+#include <string>
+#include <fstream>
+#include <functional> 
+#include <cctype>
+#include <locale>
 
 #ifdef _DEBUG
 #define DEBUG
@@ -21,61 +19,157 @@ random_device, just use an onther random number generator.
 namespace N2B
 {
 	class Actor;
+	
+	/**
+	@see N2B::Actor::what()
+	*/
+	enum Actor_T
+	{
+		ACTOR,
+		BAT,
+		PLAYER,
+		WUMPUS
+	};
+
+	/**
+	@see N2B::Player::shoot()
+	*/
+	enum Shot_Outcome
+	{
+		HIT,
+		MISS,
+		WAKED_THE_WUMPUS
+	};
+
+	/**
+	@see N2B::Actor::move()
+	*/
+	enum HtW_Event
+	{
+		NOTHING,
+		GRIPPED_BY_BAT,
+		FELL_IN_HOLE,
+		GOT_EATEN
+	};
 
 	class Room
 	{
 		friend class Labyrinth;
 		friend class Player;
 	public:
+		//the name of the room
 		std::string name;
+		//if the room has a hole this will be true
 		bool has_hole;
+		//if an actor is inside, this will point to him
 		Actor *actor;
 	private:
-		Room() {}
+		//rooms that are connected with this room
 		std::vector<Room*> connected_rooms;
 	};
 
+	/**
+	An Actor is everything that can move through the labyrinth
+
+	@see N2B::Player
+	@see N2B::Bat
+	@see N2B::Wumpus
+	*/
 	class Actor
 	{
 		friend class Labyrinth;
 		friend class Room;
 	public:
-		void move(Room* room);
-	private:
-		std::string what();
+		/**
+		returns the type of the Actor
+
+		@param none
+		@return Actor_T
+		*/
+		virtual Actor_T what() { return ACTOR; }
+
+		/**
+		moves the Actor into an other room, returns
+		an event that can accure if two actors meet, or
+		the player fells into a hole
+
+		@param Room* to move in
+		@return Event
+		*/
+		virtual HtW_Event move(Room* room);
 		Room *position;
 	};
 
+	/**
+	A player has a Bow with a range and can shoot with it
+
+	@see N2B::Actor
+	@see N2B::Player::shoot()
+	*/
 	class Player : public Actor
 	{
 		friend class Labyrinth;
 	private:
-		std::string what() { return "Actor"; };
+		Actor_T what() { return PLAYER; };
 	public:
-		bool shoot(std::vector<Room*> shoot_through);
+		int bow_range; //range of the bow, 3 would mean 3 Rooms
+		Shot_Outcome shoot(std::vector<Room*> shoot_through, int difficulty);
 	};
 
+	/**
+	A Bat is an actor whoms what() function returns BAT
+
+	@see N2B::Actor
+	*/
 	class Bat : public Actor
 	{
 		friend class Labyrinth;
 	private:
-		std::string what() { return "Bat"; };
+		Actor_T what() { return BAT; };
 	};
 
+	/**
+	A Wumpus is an actor whoms what() function returns WUMPUS
+
+	@see N2B::Actor
+	*/
 	class Wumpus : public Actor
 	{
 		friend class Labyrinth;
+	public:
+		HtW_Event move(Room* room);
 	private:
-		std::string what() { return "Wumpus"; };
+		Actor_T what() { return WUMPUS; };
 	};
 
 	class Labyrinth
 	{
 	public:
-		std::vector<Room*> get_room_connections(const Room* room);
+		//The player of the game
 		Player player;
+		//the Wumpulus
+		Wumpus wump;
+		//The Giant Bat
+		Bat bat;
 
-		explicit Labyrinth(int size, int difficulty);
+		/**
+		Generates a new labyrinth, loads room names from rooms.txt
+		and prepares the labyrinth with actors and holes
+
+		@param int size, int difficulty
+		@see Labyrinth::load_room_names()
+		@see Labyrinth::generate_wing()
+		@see Labyrinth::merge_wings()
+		@see Labyrinth::prepare_labyrinth()
+		*/
+		Labyrinth(int size, int difficulty);
+
+		/**
+		deletes the Labyrinth
+
+		@param none
+		@return none
+		*/
 		~Labyrinth();
 
 		/**
@@ -86,12 +180,31 @@ namespace N2B
 		*/
 		void print();
 
+		/**
+		returns the rooms that are connected with the given room
+
+		@param Room*
+		@return vector<Room*> connections
+		*/
+		std::vector<Room*> get_room_connections(const Room* room);
+
+		/**
+		returns a random room of the labyrinth
+
+		@param none
+		@return Room* to a room of room_list
+		*/
+		Room* get_random_room();
 	private:
+		//difficulty has influence on the number of holes and the chance
+		//to wake the wumpus
 		int difficulty;
-		Wumpus wump;
-		Bat bat;
+		//matrix of the room connections
 		std::vector<std::vector<Room*>> labyrinth;
+		//list of the rooms for better access
 		std::vector<Room*> room_list;
+		//list of possible room names
+		std::vector<std::string> room_names;
 		// Random seed
 		std::random_device rd;
 
@@ -168,11 +281,58 @@ namespace N2B
 		*/
 		void prepare_labyrinth();
 
+		/**
+		adds the connected rooms to every rooms connected vector
+
+		@param none
+		@return none
+		*/
 		void connect_rooms();
 
+		/**
+		places the actors of the game in different random rooms
+
+		@param none
+		@return none
+		*/
 		void place_actors();
 
+		/**
+		places as many holes as the difficulty level is 
+		in different random rooms
+
+		@param none
+		@return none
+		*/
 		void place_holes();
+
+		/**
+		loads possible room names from the rooms.txt
+
+		@param none
+		@return vector<string> of room names
+		*/
+		std::vector<std::string> load_room_names();
+
+		/**
+		returns a randomly from the room_names vector picked string
+		erases that string from room_names
+
+		@param none
+		@return string name
+		*/
+		std::string get_room_name();
 	};
 
+	// trim from start (in place) should be replaced by boost
+	static inline void ltrim(std::string &s) {
+		s.erase(s.begin(), std::find_if(s.begin(), s.end(),
+			std::not1(std::ptr_fun<int, int>(std::isspace))));
+	}
+
+	// trim from end (in place) should be replaced by boost
+	static inline void rtrim(std::string &s) {
+		s.erase(std::find_if(s.rbegin(), s.rend(),
+			std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+	}
 }

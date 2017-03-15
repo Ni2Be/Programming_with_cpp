@@ -3,9 +3,11 @@
 using namespace N2B;
 
 Labyrinth::Labyrinth(int size, int difficulty)
-:difficulty(difficulty) {
-	if (difficulty > size) throw std::runtime_error(
-		"N2B::Labyrinth::Labyrinth()\ndifficulty has to be smaller than size");
+ {
+	if (size < 2 || size > 10) size = 3;
+	if (difficulty > size) difficulty = size;
+	this->difficulty = difficulty;
+	room_names = load_room_names();
 	labyrinth = generate_wing();
 	for (int i = 0; i < size; i++)
 	{
@@ -21,7 +23,6 @@ Labyrinth::Labyrinth(int size, int difficulty)
 #endif //DEBUG
 }
 
-
 Labyrinth::~Labyrinth()
 {
 	for (auto room : room_list)
@@ -36,6 +37,16 @@ std::vector<Room*> Labyrinth::get_room_connections(const Room* room)
 	return connections;
 }
 
+Room* Labyrinth::get_random_room()
+{
+	// Initialize Mersenne Twister pseudo-random number generator
+	std::mt19937 gen(rd());
+	// Generate pseudo-random numbers
+	// uniformly distributed in range (1, room_list.size() - 1)
+	std::uniform_int_distribution<> dis(0, room_list.size() - 1);
+	return room_list[dis(gen)];
+}
+
 std::vector<std::vector<Room*>> Labyrinth::generate_wing()
 {
 	std::vector<std::vector<Room*>> wing;
@@ -43,9 +54,10 @@ std::vector<std::vector<Room*>> Labyrinth::generate_wing()
 	for (int i = 0; i < 4; i++)
 	{
 		Room* room = new Room();
-		std::stringstream ss;
-		ss << room_list.size();
-		room->name = ss.str();
+		room->name = get_room_name();
+		//std::stringstream ss; old
+		//ss << room_list.size(); old
+		//room->name = ss.str(); old
 		room_list.push_back(room);
 	}
 
@@ -160,11 +172,13 @@ void Labyrinth::print()
 			if (labyrinth[i][n] != 0)
 			{
 				char symbol = '*';
-				if (labyrinth[i][n]->bat_inside) symbol = '}';
-				else if (labyrinth[i][n]->player_inside) symbol = 'P';
-				else if (labyrinth[i][n]->wumpus_inside) symbol = 'W';
-				else if (labyrinth[i][n]->has_hole) symbol = 'O';
-				
+				if (labyrinth[i][n]->actor != 0)
+				{
+					if (labyrinth[i][n]->actor->what() == Actor_T::BAT) symbol = '}';
+					else if (labyrinth[i][n]->actor->what() == Actor_T::PLAYER) symbol = 'P';
+					else if (labyrinth[i][n]->actor->what() == Actor_T::WUMPUS) symbol = 'W';
+				}
+				if (labyrinth[i][n]->has_hole) symbol = 'O';
 				std::cout << symbol << ' ';
 			}
 			else
@@ -257,32 +271,99 @@ void Labyrinth::place_holes()
 	}
 }
 
-bool Player::shoot(std::vector<Room*> shoot_through)
+Shot_Outcome Player::shoot(std::vector<Room*> shoot_through, int difficulty)
 {
 	for (auto room : shoot_through)
 	{
-		if (room->wumpus_inside == true) return true;
-		for (auto connection : room->connected_rooms)
-		{
-			if (connection->wumpus_inside == true)
-			{
-				std::random_device rd;
-				// Initialize Mersenne Twister pseudo-random number generator
-				std::mt19937 gen(rd());
-				// Generate pseudo-random numbers
-				// uniformly distributed in range (0, room->connected_rooms.size() - 1)
-				std::uniform_int_distribution<> dis(0, connection->connected_rooms.size() - 1);
-				//pick room
-				connection->actor->move(connection->connected_rooms[dis(gen)]);
-			}
-		}
+		if (room->actor != 0 && room->actor->what() == Actor_T::WUMPUS)
+			return Shot_Outcome::HIT;
 	}
+	// Random seed
+	std::random_device rd;
+	// Initialize Mersenne Twister pseudo-random number generator
+	std::mt19937 gen(rd());
+	// Generate pseudo-random numbers
+	// uniformly distributed in range (0, difficulty)
+	std::uniform_int_distribution<> dis(0, difficulty);
+	if (dis(gen) > 0)
+		return Shot_Outcome::WAKED_THE_WUMPUS;
+	return Shot_Outcome::MISS;
 }
 
-void Actor::move(Room* room)
+HtW_Event Actor::move(Room* room)
 {
-	Room* prev_Room = this->position;
-	this->position = room;
-	prev_Room->actor = 0;
-	room->actor = this;
+	if (room->actor != 0)
+	{
+		if (room->actor->what() == Actor_T::WUMPUS)
+			return HtW_Event::GOT_EATEN;
+		if (room->actor->what() == Actor_T::BAT)
+			return HtW_Event::GRIPPED_BY_BAT;
+	}
+	else if (room->has_hole)
+	{
+		return HtW_Event::FELL_IN_HOLE;
+	}
+	else
+	{
+		Room* prev_Room = this->position;
+		this->position = room;
+		prev_Room->actor = 0;
+		room->actor = this;
+	}
+	return HtW_Event::NOTHING;
+}
+
+HtW_Event Wumpus::move(Room* room)
+{
+	if (room->actor != 0)
+	{
+		if (room->actor->what() == Actor_T::PLAYER)
+			return HtW_Event::GOT_EATEN;
+	}
+	else
+	{
+		Room* prev_Room = this->position;
+		this->position = room;
+		prev_Room->actor = 0;
+		room->actor = this;
+	}
+	return HtW_Event::NOTHING;
+}
+
+std::vector<std::string> Labyrinth::load_room_names() {
+	std::string inFile = "rooms.txt";
+	std::ifstream istr(inFile.c_str());
+
+	if (!istr) throw std::runtime_error(
+		"N2B::Labyrinth::load_room_names()\nCould not open File");
+
+	std::vector<std::string> room_names;
+	while (!istr.eof())
+	{
+		char line[100];
+		istr.getline(line, 100);
+		std::string name(line);
+		N2B::ltrim(name);
+		N2B::rtrim(name);
+		room_names.push_back(name);
+#ifdef DEBUG
+		std::cout << "*" << name << "*\n";
+#endif //DEBUG
+	}
+	return room_names;
+}
+
+
+std::string Labyrinth::get_room_name()
+{
+	// Initialize Mersenne Twister pseudo-random number generator
+	std::mt19937 gen(rd());
+	// Generate pseudo-random numbers
+	// uniformly distributed in range (0, room_names.size() - 1)
+	std::uniform_int_distribution<> dis(0, room_names.size() - 1);
+
+	int rand_num = dis(gen);
+	std::string name = room_names[rand_num];
+	room_names.erase(room_names.begin() + rand_num);
+	return name;
 }
