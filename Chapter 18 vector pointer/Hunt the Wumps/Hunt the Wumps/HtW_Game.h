@@ -1,8 +1,30 @@
 #pragma once
 #include "Labyrinth.h"
 
+#ifdef _WIN32
+#define WIN_SYSTEM
+#include <Windows.h>
+#include <stdlib.h>
+#endif
 namespace N2B
 {
+#ifndef WIN_SYSTEM
+	enum HANDLE
+	{
+		NO_MEANING
+	};
+#endif // !WIN_SYSTEM
+
+	enum Color
+	{
+		WHITE,
+		GREY,
+		RED,
+		BLUE,
+		YELLOW,
+		GREEN
+	};
+
 	/**
 	A Hunt the Wumps game contains a Labyrinth and
 	is responsible for the user interaction
@@ -63,15 +85,6 @@ namespace N2B
 		int game_loop();
 
 		/**
-		prints a hint what could be inside the roomes
-		of a given vector of room*
-
-		@param vector of room*
-		@return none
-		*/
-		void print_what_is_near(std::vector<N2B::Room*> rooms);
-
-		/**
 		prints the room names of a given vector of rooms
 
 		@param vector of room*
@@ -104,6 +117,26 @@ namespace N2B
 		*/
 		Room* get_random_room(std::vector<N2B::Room*> rooms);
 
+
+#ifdef WIN_SYSTEM
+		void print_change_color(HANDLE hConsole, N2B::Color c);
+#else //just to remember there will another function be compiled
+		void print_change_color(HANDLE hConsole, N2B::Color c);
+#endif //WIN_SYSTEM
+		void print_clear_console();
+
+		/**
+		prints a hint what could be inside the roomes
+		of a given vector of room*
+
+		@param vector of room*
+		@return none
+		*/
+#ifdef WIN_SYSTEM
+		void print_what_is_near(HANDLE hConsole, std::vector<N2B::Room*> rooms);
+#else //just to remember there will another function be compiled
+		void print_what_is_near(HANDLE hConsole, std::vector<N2B::Room*> rooms);
+#endif //WIN_SYSTEM
 		void print_castle();
 		void print_wumpus();
 		void print_bat();

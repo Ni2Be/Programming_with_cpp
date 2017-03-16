@@ -1,11 +1,11 @@
 ﻿  HtW_Game.cpp
-HtW_Game.cpp(84): warning C4018: ">": Konflikt zwischen "signed" und "unsigned"
-HtW_Game.cpp(92): warning C4018: ">": Konflikt zwischen "signed" und "unsigned"
-HtW_Game.cpp(171): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-HtW_Game.cpp(174): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-HtW_Game.cpp(201): warning C4018: ">=": Konflikt zwischen "signed" und "unsigned"
-HtW_Game.cpp(271): warning C4129: " ": nicht erkannte Folge von Escapesequenz
-HtW_Game.cpp(364): warning C4129: " ": nicht erkannte Folge von Escapesequenz
+HtW_Game.cpp(96): warning C4018: ">": Konflikt zwischen "signed" und "unsigned"
+HtW_Game.cpp(104): warning C4018: ">": Konflikt zwischen "signed" und "unsigned"
+HtW_Game.cpp(182): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+HtW_Game.cpp(185): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+HtW_Game.cpp(222): warning C4018: ">=": Konflikt zwischen "signed" und "unsigned"
+HtW_Game.cpp(378): warning C4129: " ": nicht erkannte Folge von Escapesequenz
+HtW_Game.cpp(471): warning C4129: " ": nicht erkannte Folge von Escapesequenz
   Labyrinth.cpp
 Labyrinth.cpp(95): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
 Labyrinth.cpp(98): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
@@ -19,7 +19,7 @@ Labyrinth.cpp(203): warning C4018: "<": Konflikt zwischen "signed" und "unsigned
 Labyrinth.cpp(205): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
   main.cpp
   Code wird generiert.
-  All 592 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 594 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Codegenerierung ist abgeschlossen.
   Hunt the Wumps.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Hunt the Wumps\Release\Hunt the Wumps.exe
   Hunt the Wumps.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Hunt the Wumps\Release\Hunt the Wumps.pdb (Full PDB)

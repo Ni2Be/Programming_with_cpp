@@ -17,8 +17,13 @@ void HtW_Game::start()
 
 int HtW_Game::game_loop()
 {
+#ifdef WIN_SYSTEM
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+#else
+	HANDLE hConsole = N2B::HANDLE::NO_MEANING;
+#endif //WIN_SYSTEM
+	print_clear_console();
 	bool game_running = true;
-	system("cls");
 	std::cout << "You are a brave hero who came to this castle to hunt a\n"
 		<< "giant Monster that lived here for hunderds of years.\n"
 		<< "The Wumpus!\n"
@@ -32,9 +37,10 @@ int HtW_Game::game_loop()
 		//get connected rooms
 		std::vector<N2B::Room*> connections = lab.get_room_connections(lab.player.position);
 
-		print_what_is_near(connections);
-
+		print_what_is_near(hConsole, connections);
+		print_change_color(hConsole, N2B::Color::GREY);
 		std::cout << "you see the rooms:\n";
+		print_change_color(hConsole, N2B::Color::WHITE);
 		print_room_names(connections);
 
 
@@ -50,7 +56,7 @@ int HtW_Game::game_loop()
 			if (controller == Controller_state::SHOOT)
 			{
 				//generate shot
-				system("cls");
+				print_clear_console();
 				print_bow();
 				std::vector<N2B::Room*> shot = build_shot();
 				Shot_Outcome shot_outcome = lab.player.shoot(shot, difficulty);
@@ -58,23 +64,29 @@ int HtW_Game::game_loop()
 				//what did happen
 				if (shot_outcome == Shot_Outcome::HIT)
 				{
-					system("cls");
+					print_clear_console();
 					print_hit();
-					std::cout << "\nYou hitted the Wumpus!\n";
+					print_change_color(hConsole, N2B::Color::GREEN);
+					std::cout << "\nYou hit the Wumpus!\n";
+					print_change_color(hConsole, N2B::Color::WHITE);
 					controller = Controller_state::WIN;
 					break;
 				}
 				else if (shot_outcome == Shot_Outcome::MISS)
 				{
-					system("cls");
+					print_clear_console();
+					print_change_color(hConsole, N2B::Color::GREY);
 					std::cout << "\nYou missed!\n";
+					print_change_color(hConsole, N2B::Color::WHITE);
 				}
 				else if (shot_outcome == Shot_Outcome::WAKED_THE_WUMPUS)
 				{
 					std::vector<N2B::Room*> wump_connections = lab.get_room_connections(lab.wump.position);
 					event_hadler = lab.wump.move(get_random_room(wump_connections));
-					system("cls");
+					print_clear_console();
+					print_change_color(hConsole, N2B::Color::YELLOW);
 					std::cout << "\nYou hear a monster moving!\n";
+					print_change_color(hConsole, N2B::Color::WHITE);
 				}
 			}
 			//Move
@@ -83,14 +95,18 @@ int HtW_Game::game_loop()
 				int targeted_room = -1;
 				while (targeted_room <= 0 || targeted_room > connections.size())
 				{
-					system("cls");
+					print_clear_console();
 					print_doors();
 					std::cout << "\nwhere do you want to move?\n";
 					print_room_names(connections);
 					std::cin >> targeted_room;
 					std::cin.clear();
 					if (targeted_room <= 0 || targeted_room > connections.size())
+					{
+						print_change_color(hConsole, N2B::Color::RED);
 						std::cout << "\nnot possible\n";
+						print_change_color(hConsole, N2B::Color::WHITE);
+					}
 					else
 					{
 						event_hadler = lab.player.move(connections[targeted_room - 1]);
@@ -102,24 +118,31 @@ int HtW_Game::game_loop()
 			//Did somthing happen
 			if (event_hadler == HtW_Event::FELL_IN_HOLE)
 			{
-				system("cls");
+				print_clear_console();
 				print_hole();
+				print_change_color(hConsole, N2B::Color::RED);
 				std::cout << "\nYou fell in a hole!\n";
+				print_change_color(hConsole, N2B::Color::WHITE);
 				controller = Controller_state::LOSE;
 			}
 			else if (event_hadler == HtW_Event::GOT_EATEN)
 			{
-				system("cls");
+				print_clear_console();
 				print_wumpus();
+				print_change_color(hConsole, N2B::Color::RED);
 				std::cout << "\nThe Wumpus ate you!\n";
+				print_change_color(hConsole, N2B::Color::WHITE);
 				controller = Controller_state::LOSE;
 			}
 			else if (event_hadler == HtW_Event::GRIPPED_BY_BAT)
 			{
 				//Move the player into a random room
-				system("cls");
+				print_clear_console();
 				print_bat();
-				std::cout << "\nA giant Bat gipped you!\n";
+				print_change_color(hConsole, N2B::Color::YELLOW);
+				std::cout << "\nA giant Bat gipped you!\n"
+					<< "You beat it until it drops you off\n";
+				print_change_color(hConsole, N2B::Color::WHITE);
 				Room* fly_to = lab.get_random_room();
 				while (fly_to->has_hole || fly_to->actor != 0)
 					fly_to = lab.get_random_room();
@@ -137,33 +160,21 @@ int HtW_Game::game_loop()
 		//did the player win or lose?
 		if (controller == Controller_state::WIN)
 		{
+			print_change_color(hConsole, N2B::Color::GREEN);
 			std::cout << "You WON!\n";
+			print_change_color(hConsole, N2B::Color::WHITE);
 			break;
 		}
 		else if (controller == Controller_state::LOSE)
 		{
+			print_change_color(hConsole, N2B::Color::RED);
 			std::cout << "You LOSE!\n";
+			print_change_color(hConsole, N2B::Color::WHITE);
 			break;
 		}
 		controller = Controller_state::INVALID;
 	}
 	return 0;
-}
-
-void HtW_Game::print_what_is_near(std::vector<N2B::Room*> rooms)
-{
-	for (auto connected_rooms : rooms)
-	{
-		if (connected_rooms->actor != 0)
-		{
-			if (connected_rooms->actor->what() == N2B::Actor_T::BAT)
-				std::cout << "You hear a Bat\n";
-			else if (connected_rooms->actor->what() == N2B::Actor_T::WUMPUS)
-				std::cout << "You smell the Wumpus\n";
-		}
-		if (connected_rooms->has_hole)
-			std::cout << "You feel a breeze\n";
-	}
 }
 
 void HtW_Game::print_room_names(std::vector<N2B::Room*> rooms)
@@ -185,9 +196,19 @@ std::vector<N2B::Room*> HtW_Game::build_shot()
 {
 	std::vector<N2B::Room*> shot;
 	N2B::Room *arrow_position = lab.player.position;
+	std::cout << "\nwhere do you want to shoot?\n";
 	for (int i = 0; i < lab.player.bow_range; i++)
 	{
-		std::cout << "\nwhere do you want to shoot?\n";
+		if (i == lab.player.bow_range - 1)
+		{
+			std::cout << "\nyour arrow can reach "
+				<< lab.player.bow_range - i << " more room\n";
+		}
+		else if (i > 0)
+		{
+			std::cout << "\nyour arrow can reach "
+				<< lab.player.bow_range - i << " more rooms\n";
+		}
 		std::cout << "\nenter 1, 2 or 3\n"; //TODO
 		std::cout << "possible rooms:\n";
 		
@@ -237,6 +258,92 @@ Room* HtW_Game::get_random_room(std::vector<N2B::Room*> rooms)
 	// uniformly distributed in range (1, room_list.size() - 1)
 	std::uniform_int_distribution<> dis(0, rooms.size() - 1);
 	return rooms[dis(gen)];
+}
+
+void HtW_Game::print_clear_console()
+{
+#ifdef WIN_SYSTEM
+	system("cls");
+#endif //WIN_SYSTEM
+}
+
+void HtW_Game::print_change_color(HANDLE hConsole, N2B::Color c)
+{
+#ifdef WIN_SYSTEM
+	switch (c)
+	{
+	case N2B::Color::BLUE:
+		SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY | FOREGROUND_BLUE);
+		break;
+	case N2B::Color::RED:
+		SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY | FOREGROUND_RED);
+		break;
+	case N2B::Color::GREY:
+		SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
+		break;
+	case N2B::Color::YELLOW:
+		SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN);
+		break;
+	case N2B::Color::GREEN:
+		SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY | FOREGROUND_GREEN);
+		break;
+	case N2B::Color::WHITE:
+		SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+		break;
+	default:
+		SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+		break;
+	}
+#endif //WIN_SYSTEM
+}
+
+void HtW_Game::print_what_is_near(HANDLE hConsole, std::vector<N2B::Room*> rooms)
+{
+#ifdef WIN_SYSTEM
+	for (auto connected_rooms : rooms)
+	{
+		if (connected_rooms->actor != 0)
+		{
+			if (connected_rooms->actor->what() == N2B::Actor_T::BAT)
+			{
+				print_change_color(hConsole, N2B::Color::YELLOW);
+				std::cout << "You hear a Bat\n";
+				print_change_color(hConsole, N2B::Color::WHITE);
+			}
+			else if (connected_rooms->actor->what() == N2B::Actor_T::WUMPUS)
+			{
+				print_change_color(hConsole, N2B::Color::GREY);
+				std::cout << "You smell the Wumpus\n";
+				print_change_color(hConsole, N2B::Color::WHITE);
+			}
+		}
+		if (connected_rooms->has_hole)
+		{
+			print_change_color(hConsole, N2B::Color::BLUE);
+			std::cout << "You feel a breeze\n";
+			print_change_color(hConsole, N2B::Color::WHITE);
+		}
+	}
+#else
+	for (auto connected_rooms : rooms)
+	{
+		if (connected_rooms->actor != 0)
+		{
+			if (connected_rooms->actor->what() == N2B::Actor_T::BAT)
+			{
+				std::cout << "You hear a Bat\n";
+			}
+			else if (connected_rooms->actor->what() == N2B::Actor_T::WUMPUS)
+			{
+				std::cout << "You smell the Wumpus\n";
+			}
+		}
+		if (connected_rooms->has_hole)
+		{
+			std::cout << "You feel a breeze\n";
+		}
+	}
+#endif //WIN_SYSTEM
 }
 
 void HtW_Game::print_castle()
