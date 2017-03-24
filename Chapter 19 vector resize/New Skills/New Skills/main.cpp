@@ -4,42 +4,25 @@
 
 void vec_test();
 
-using namespace std;
-
-struct test {
+struct Test {
 	int i;
 	double f;
-	test() :i(2), f(7){}
+	Test() :i(2), f(7){}
 };
 
 int main()
 {
 	vec_test();
 	char ch;
-	cin >> ch;
+	std::cin >> ch;
 }
 
 void vec_test()
 {
-	not_std::vector<double> vec0(10);
-	for (int i = 0; i < vec0.size(); i++)
-	{
-		cout << vec0[i] << " ";
-	}
-
-	cout << endl;
-	vec0.resize(20, 5);
-
-	for (int i = 0; i < vec0.size(); i++)
-	{
-		cout << vec0[i] << " ";
-	}
-
-	cout << endl;
-	vec0.push_back(20);
-
-	for (int i = 0; i < vec0.size(); i++)
-	{
-		cout << vec0[i] << " ";
-	}
+	
+	not_std::vector<int> v1;
+	v1.push_back(1);
+	v1[0] = 4;
+	v1.push_back(9);
+	std::cout << v1[0] << " " << v1[1];
 }
