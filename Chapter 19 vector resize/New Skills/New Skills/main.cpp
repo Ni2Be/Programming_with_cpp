@@ -19,10 +19,11 @@ int main()
 
 void vec_test()
 {
-	
+	not_std::vector<int> v2;
 	not_std::vector<int> v1;
 	v1.push_back(1);
 	v1[0] = 4;
 	v1.push_back(9);
-	std::cout << v1[0] << " " << v1[1];
+	v2 = v1;
+	std::cout << v2[0] << " " << v2[1];
 }

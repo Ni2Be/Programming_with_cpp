@@ -1,10 +1,11 @@
 #pragma once
 #include <memory>
 #include <algorithm>
+#include "Allocator.h"
 
 namespace not_std 
 {
-	template<class T, class A = std::allocator<T>> 
+	template<class T, class A = not_std::allocator<T>>
 	class vector
 	{
 	private:
@@ -27,7 +28,22 @@ namespace not_std
 
 		T& operator[](int idx);
 		const T& operator[](int idx) const;
+		vector& operator=(const vector& a);
 	};
+}
+
+template<class T, class A>
+not_std::vector<T, A>& not_std::vector<T, A>::operator=(const not_std::vector<T, A>& a)
+{
+	this->alloc.deallocate(elem, space);
+	this->elem = this->alloc.allocate(a.sz);
+	for (int i = 0; i < a.sz; i++)
+	{
+		this->alloc.construct(&elem[i], a.elem[i]);
+	}
+	this->sz = a.sz;
+	this->space = a.space; 
+	return *this;
 }
 
 template<class T, class A> 
@@ -42,7 +58,6 @@ const T& not_std::vector<T, A>::operator[](int idx) const
 	return this->elem[idx];
 }
 
-//Public functions:
 template<class T, class A> 
 int not_std::vector<T, A>::size() const
 {

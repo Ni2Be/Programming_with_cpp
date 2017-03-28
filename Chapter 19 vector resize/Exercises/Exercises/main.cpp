@@ -1,12 +1,21 @@
+/*
+Seems that I was drunk as I programmed prats of it.
+*/
+
+
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <math.h>
 
 template <class T, class V = std::vector<T>>
 void vector_add(V& v1, const V& v2); 
 
 template <class T, class V>
 V& solve_multipli(const V& v1, const V& v2);
+
+template <class N>
+class Number;
 
 template <class N>
 class Number
@@ -18,29 +27,49 @@ public:
 	Number (N value)
 		:val(value) {}
 
+	bool operator==(const Number& i)
+	{
+		return val == i.val;
+	}
+
+	bool operator!=(const Number& i)
+	{
+		return val != i.val;
+	}
+
 	Number& operator+=(const Number& i)
 	{
 		val += i.val;
 		return *this;
 	}
-	Number& operator%=(const Number& i)
+	Number& operator-=(const Number& i)
 	{
-		val %= i.val;
+		val -= i.val;
+		return *this;
+	}
+	Number& operator/=(const Number& i)
+	{
+		val /= i.val;
+		return *this;
+	}
+	Number& operator*=(const Number& i)
+	{
+		val *= i.val;
 		return *this;
 	}
 };
 template <class N>
 inline Number<N> operator+(Number<N> lhs, const Number<N>& rhs)
 {
-	lhs += rhs;
-	return lhs;
+	return lhs += rhs;
 }
 
 template <class N>
-inline Number<N> operator%(Number<N> lhs, const Number<N>& rhs)
+inline Number<N> operator%(const Number<N>& lhs, const int rhs)
 {
-	lhs %= rhs;
-	return lhs;
+	N a = lhs.val;
+	int m = rhs;
+
 }
 
 template <class N>
@@ -152,7 +181,8 @@ int main()
 		std::cin >> i1 >> i2;
 		std::cout << "i1: " << i1 << "\ni2; " << i2 << std::endl;
 		
-		std::cout << "i1: " << i1 % 2 << "\ni2; " << i2 % 3 << std::endl;
+		std::cout << "\nMod\n";
+		std::cout << "i1: " << i1 % 5 << "\ni2; " << i2 % 5 << std::endl;
 
 
 	}

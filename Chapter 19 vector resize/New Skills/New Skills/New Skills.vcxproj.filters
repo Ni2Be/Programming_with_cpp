@@ -23,5 +23,8 @@
     <ClInclude Include="Vector.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Allocator.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

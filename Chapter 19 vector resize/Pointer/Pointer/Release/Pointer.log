@@ -1,0 +1,7 @@
+﻿  main.cpp
+  Code wird generiert.
+d:\programmieren\programming_with_cpp\chapter 19 vector resize\pointer\pointer\pointer.h(65): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": new_p" wird zurückgegeben
+  All 25 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  Pointer.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 19 vector resize\Pointer\Release\Pointer.exe
+  Pointer.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 19 vector resize\Pointer\Release\Pointer.pdb (Full PDB)
