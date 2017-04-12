@@ -1,0 +1,96 @@
+Bezeichnung	Kurs	+/-	Diff. %	Relation	Zeit	Umsatz/€	Umsatz/St.
+DAX ® 	12.154,70 	+15,35 	+0,13% 	
+Negative Veraenderung
+	17:45 	- 	- 	Link zum Chart 	News 	Depot
+  	  	  	  	  	  	  	  	  	  	 
+
+ADIDAS 	177,45 €  	+1,65 	+0,94% 	
+Negative Veraenderung
+	17:35 	88,7 Mio. 	501.507 	Link zum Chart 	  	Depot
+ALLIANZ 	171,40 €  	+0,75 	+0,44% 	
+Negative Veraenderung
+	17:35 	207,2 Mio. 	1,2 Mio. 	Link zum Chart 	News 	Depot
+BASF 	91,45 €  	-0,36 	-0,39% 	
+Negative Veraenderung
+	17:35 	156,9 Mio. 	1,7 Mio. 	Link zum Chart 	  	Depot
+BAYER 	106,25 €  	+0,35 	+0,33% 	
+Negative Veraenderung
+	17:35 	156,2 Mio. 	1,5 Mio. 	Link zum Chart 	News 	Depot
+BEIERSDORF 	91,17 €  	+0,62 	+0,68% 	
+Negative Veraenderung
+	17:35 	25,1 Mio. 	276.516 	Link zum Chart 	  	Depot
+BMWST 	83,39 €  	+0,76 	+0,92% 	
+Negative Veraenderung
+	17:35 	152,6 Mio. 	1,8 Mio. 	Link zum Chart 	News 	Depot
+COMMERZBANK 	8,13 €  	-0,04 	-0,44% 	
+Negative Veraenderung
+	17:35 	83,9 Mio. 	10,3 Mio. 	Link zum Chart 	News 	Depot
+CONTINENTAL 	200,20 €  	+0,80 	+0,40% 	
+Negative Veraenderung
+	17:35 	72,1 Mio. 	359.635 	Link zum Chart 	  	Depot
+DAIMLER 	66,82 €  	+0,18 	+0,27% 	
+Negative Veraenderung
+	17:35 	327,8 Mio. 	4,9 Mio. 	Link zum Chart 	News 	Depot
+DT.BANK 	15,28 €  	-0,02 	-0,13% 	
+Negative Veraenderung
+	17:35 	228,5 Mio. 	14,9 Mio. 	Link zum Chart 	News 	Depot
+DT.BÖRSE 	86,15 €  	-0,94 	-1,08% 	
+Negative Veraenderung
+	17:35 	40,7 Mio. 	472.173 	Link zum Chart 	  	Depot
+DT.POST 	31,07 €  	-0,10 	-0,30% 	
+Negative Veraenderung
+	17:35 	66,2 Mio. 	2,1 Mio. 	Link zum Chart 	News 	Depot
+DT.TELEKOM 	16,13 €  	-0,02 	-0,09% 	
+Negative Veraenderung
+	17:35 	118,0 Mio. 	7,3 Mio. 	Link zum Chart 	  	Depot
+E.ON 	7,37 €  	-0,00 	-0,04% 	
+Negative Veraenderung
+	17:35 	56,9 Mio. 	7,7 Mio. 	Link zum Chart 	  	Depot
+FMC 	78,98 €  	+0,61 	+0,78% 	
+Negative Veraenderung
+	17:35 	48,4 Mio. 	612.951 	Link zum Chart 	News 	Depot
+FRESENIUS 	75,16 €  	+0,18 	+0,24% 	
+Negative Veraenderung
+	17:35 	48,0 Mio. 	638.538 	Link zum Chart 	News 	Depot
+HEID.CEMENT 	86,59 €  	-0,90 	-1,03% 	
+Negative Veraenderung
+	17:35 	43,4 Mio. 	499.573 	Link zum Chart 	  	Depot
+HenkelVZ 	123,20 €  	+1,60 	+1,32% 	
+Negative Veraenderung
+	17:35 	47,5 Mio. 	388.062 	Link zum Chart 	News 	Depot
+INFINEON 	18,48 €  	-0,04 	-0,22% 	
+Negative Veraenderung
+	17:35 	74,8 Mio. 	4,1 Mio. 	Link zum Chart 	News 	Depot
+LINDE 	159,45 €  	+1,10 	+0,69% 	
+Negative Veraenderung
+	17:35 	55,5 Mio. 	348.408 	Link zum Chart 	News 	Depot
+LUFTHANSA 	15,68 €  	-0,15 	-0,95% 	
+Negative Veraenderung
+	17:35 	51,3 Mio. 	3,3 Mio. 	Link zum Chart 	News 	Depot
+MERCK 	105,45 €  	+0,70 	+0,67% 	
+Negative Veraenderung
+	17:35 	28,9 Mio. 	275.515 	Link zum Chart 	  	Depot
+MÜNCH.RÜCK 	182,85 €  	+0,55 	+0,30% 	
+Negative Veraenderung
+	17:35 	74,5 Mio. 	408.127 	Link zum Chart 	  	Depot
+PROSIEBENSAT.1 	41,21 €  	+0,25 	+0,62% 	
+Negative Veraenderung
+	17:35 	21,4 Mio. 	520.267 	Link zum Chart 	  	Depot
+RWEST 	15,83 €  	+0,07 	+0,44% 	
+Negative Veraenderung
+	17:35 	39,2 Mio. 	2,5 Mio. 	Link zum Chart 	  	Depot
+SAP 	91,49 €  	+0,47 	+0,52% 	
+Negative Veraenderung
+	17:35 	166,1 Mio. 	1,8 Mio. 	Link zum Chart 	  	Depot
+SIEMENS 	127,30 €  	-0,80 	-0,62% 	
+Negative Veraenderung
+	17:35 	190,3 Mio. 	1,5 Mio. 	Link zum Chart 	News 	Depot
+THYSSENKRUPP 	22,03 €  	-0,42 	-1,89% 	
+Negative Veraenderung
+	17:35 	52,4 Mio. 	2,4 Mio. 	Link zum Chart 	News 	Depot
+VOLKSWAGENVZ 	131,90 €  	+0,15 	+0,11% 	
+Negative Veraenderung
+	17:35 	117,0 Mio. 	882.136 	Link zum Chart 	News 	Depot
+VONOVIA 	34,35 €  	+0,21 	+0,60% 	
+Negative Veraenderung
+	17:35 	48,7 Mio. 	1,4 Mio. 	Link zum Chart 	  	Depot#

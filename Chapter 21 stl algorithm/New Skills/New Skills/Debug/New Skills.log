@@ -1,0 +1,5 @@
+﻿  main.cpp
+d:\programmieren\programming_with_cpp\chapter 21 stl algorithm\new skills\new skills\main.cpp(127): warning C4244: "Argument": Konvertierung von "__int64" in "double", möglicher Datenverlust
+d:\programmieren\programming_with_cpp\chapter 21 stl algorithm\new skills\new skills\main.cpp(134): warning C4244: "Argument": Konvertierung von "__int64" in "double", möglicher Datenverlust
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 21 stl algorithm\New Skills\Debug\New Skills.exe
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 21 stl algorithm\New Skills\Debug\New Skills.pdb (Partial PDB)
