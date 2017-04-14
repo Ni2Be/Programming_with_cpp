@@ -7,18 +7,39 @@
 #include <string>
 #include <fstream>
 #include <list>
+#include <memory>
 
 const int TESTCOUNT = 1000;
 
-struct aktie
+//SHARE TEST
+struct Share;
+std::list<Share>& read_index(std::string);
+void share_list_to_maps(std::list<Share>&, 
+	std::map<std::string, int>& amounts, 
+	std::map<std::string, double>& prices);
+void run_map_test();
+
+
+//Function vs function-object test
+class Sell_Record;
+class Price;
+void run_functobjct_test(int tests);
+double fnct_vs_fnctclass();
+double price(double v, const Sell_Record& r);
+
+
+//MAIN
+int main()
 {
-	std::string name;
-	double price;
-	int amount;
-};
+	run_functobjct_test(10000);
+	
+	run_map_test();
 
-void read_index();
+	char ch;
+	std::cin >> ch;
+}
 
+//Function vs function-object test
 class Sell_Record
 {
 	friend double price(double v, const Sell_Record& r);
@@ -30,11 +51,6 @@ public:
 		:price(p), units(u) {}
 };
 
-double price(double v, const Sell_Record& r)
-{
-	return v + r.price * r.units;
-}
-
 class Price
 {
 public:
@@ -42,36 +58,15 @@ public:
 	double operator()(double v, const Sell_Record& r) const
 	{
 		return v + r.price * r.units;
-	} 
+	}
 };
 
-void run_test(int tests);
-double fnct_vs_fnctclass();
-
-int main()
+double price(double v, const Sell_Record& r)
 {
-	//run_test(10000);
-	std::map<std::string, int> m1;
-	m1["hallo"]++;
-	m1["hallo"]++;
-	m1["bogo"]++;
-	m1["lalaa"]++;
-
-	
-	for (std::map<std::string, int>::const_iterator i1 = m1.begin();
-	i1 != m1.end(); i1++)
-	{
-		std::cout << i1->first << " : " << i1->second << std::endl;
-	}
-
-	read_index();
-
-	char ch;
-	std::cin >> ch;
+	return v + r.price * r.units;
 }
 
-
-void run_test(int tests)
+void run_functobjct_test(int tests)
 {
 	double fnct_class_time = 0;
 	for (int i = 0; i < tests; i++)
@@ -142,46 +137,104 @@ double fnct_vs_fnctclass()
 	return averange_funct - averange_funct_class;
 }
 
-void read_index()
-{
-	std::list<aktie> aktien;
-	std::string file = "aktien.txt";
-	std::ifstream istr(file.c_str());
 
+//SHARE TEST
+struct Share
+{
+	std::string name;
+	double price;
+	int amount;
+};
+
+void run_map_test()
+{
+	std::list<Share> shares = read_index("aktien.txt");
+
+	std::map<std::string, int> amounts;
+	std::map<std::string, double> prices;
+	share_list_to_maps(shares, amounts, prices);
+
+	for (std::map<std::string, int>::const_iterator iA = amounts.begin();
+	iA != amounts.end(); iA++)
+	{
+		std::cout << iA->first << "\t Price: " << prices[iA->first]
+			<< "\t Amount: " << iA->second << std::endl;
+	}
+}
+
+std::list<Share>& read_index(std::string file)
+{
+	/*	EXCAMPLE DATA:
+
+	THYSSENKRUPP 	22,03 €  	-0,42 	-1,89%
+	Negative Veraenderung
+	17:35 	52,4 Mio. 	2,4 Mio. 	Link zum Chart 	News 	Depot
+	VOLKSWAGENVZ 	131,90 €  	+0,15 	+0,11%
+	Negative Veraenderung
+	17:35 	117,0 Mio. 	882.136 	Link zum Chart 	News 	Depot
+	*/
+	std::unique_ptr<std::list<Share>> shares(new std::list<Share>);
+	std::ifstream istr(file.c_str());
 	std::string temp;
+
 	while (temp != "Depot") istr >> temp;
 	while (temp != "#")
 	{
-		aktie akt;
+		//get name
+		Share share;
 		std::string name;
 		istr >> name;
 		if (name.size() > 6)
 			name.erase(name.begin() + 6, name.end());
-		akt.name = name;
-		istr >> akt.price;
+		share.name = name;
+		
+		//get price
+		istr >> share.price;
+		istr.get();
+		double dec = 0.0;
+		istr >> dec;
+		share.price += dec / 100;
 
+		//get amount
 		while (temp != "Mio.") istr >> temp;
-		istr >> akt.amount;
+		istr >> share.amount;
+		if (istr.get() == ',')
+		{
+			istr >> dec;
+			share.amount = share.amount * 1000 + dec * 100;
+		}
+
+		//save share
+		shares->push_back(share);
+		
+		//eat useless data
 		while (temp != "Depot")
 		{
 			istr >> temp;
+			//End of data should be signed with a "#"
+			//after the last depot that should be read 
+			//in the txt file
 			if (temp == "Depot#")
 			{
 				temp = "#";
 				break;
 			}
 		}
-		aktien.push_back(akt);
 	}
-	std::cout << "\nAktien:\n";
-	for (auto i : aktien)
+	return *shares.release();
+}
+
+void share_list_to_maps(std::list<Share>& shares,
+	std::map<std::string, int>& amounts,
+	std::map<std::string, double>& prices)
+{
+	for (auto share : shares)
 	{
-		if (i.amount > 100)
-			std::cout << i.name << "\t|\t" << i.amount << "\tths\t|\t" << i.price << "\tEURO" << std::endl;
-		else
-			std::cout << i.name << "\t|\t" << i.amount * 1000 << "\tths\t|\t" << i.price << "\tEURO" << std::endl;
+		amounts[share.name] += share.amount;
+		prices[share.name] += share.price;
 	}
 }
+
 
 /* !!DEBUG CODE!!
 //function
