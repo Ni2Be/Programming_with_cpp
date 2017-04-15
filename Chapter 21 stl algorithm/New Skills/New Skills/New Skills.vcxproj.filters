@@ -23,5 +23,8 @@
     <Text Include="aktien.txt">
       <Filter>Ressourcendateien</Filter>
     </Text>
+    <Text Include="out.txt">
+      <Filter>Ressourcendateien</Filter>
+    </Text>
   </ItemGroup>
 </Project>

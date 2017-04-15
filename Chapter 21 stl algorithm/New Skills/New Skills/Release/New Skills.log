@@ -1,11 +1,11 @@
 ﻿  main.cpp
-main.cpp(122): warning C4244: "Argument": Konvertierung von "__int64" in "double", möglicher Datenverlust
-main.cpp(129): warning C4244: "Argument": Konvertierung von "__int64" in "double", möglicher Datenverlust
-main.cpp(204): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+main.cpp(141): warning C4244: "Argument": Konvertierung von "__int64" in "double", möglicher Datenverlust
+main.cpp(148): warning C4244: "Argument": Konvertierung von "__int64" in "double", möglicher Datenverlust
+main.cpp(229): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
   Code wird generiert.
-  512 of 852 functions (60.1%) were compiled, the rest were copied from previous compilation.
+  1 of 317 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    19 functions had inline decision re-evaluated but remain unchanged
+    8 functions had inline decision re-evaluated but remain unchanged
   Codegenerierung ist abgeschlossen.
   New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 21 stl algorithm\New Skills\Release\New Skills.exe
   New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 21 stl algorithm\New Skills\Release\New Skills.pdb (Full PDB)

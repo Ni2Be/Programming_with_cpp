@@ -8,16 +8,28 @@
 #include <fstream>
 #include <list>
 #include <memory>
+#include <unordered_map>
+#include <iterator>
+#include <set>
+#include <locale>
 
 const int TESTCOUNT = 1000;
 
 //SHARE TEST
 struct Share;
 std::list<Share>& read_index(std::string);
-void share_list_to_maps(std::list<Share>&, 
-	std::map<std::string, int>& amounts, 
-	std::map<std::string, double>& prices);
 void run_map_test();
+void run_unordered_map_test();
+
+template <class Map_type_string_int, class Map_type_string_double>
+void share_list_to_maps(std::list<Share>&,
+	Map_type_string_int& amounts,
+	Map_type_string_double& prices);
+
+template <class Map_type_string_int, class Map_type_string_double>
+void print_shares(
+	Map_type_string_int& amounts,
+	Map_type_string_double& prices);
 
 
 //Function vs function-object test
@@ -27,13 +39,20 @@ void run_functobjct_test(int tests);
 double fnct_vs_fnctclass();
 double price(double v, const Sell_Record& r);
 
+//dictionary
+void dictionary_test();
+bool is_alpha(std::string);
 
 //MAIN
 int main()
 {
-	run_functobjct_test(10000);
+	//run_functobjct_test(10000);
 	
-	run_map_test();
+	//run_map_test();
+
+	//run_unordered_map_test();
+
+	dictionary_test();
 
 	char ch;
 	std::cin >> ch;
@@ -154,12 +173,18 @@ void run_map_test()
 	std::map<std::string, double> prices;
 	share_list_to_maps(shares, amounts, prices);
 
-	for (std::map<std::string, int>::const_iterator iA = amounts.begin();
-	iA != amounts.end(); iA++)
-	{
-		std::cout << iA->first << "\t Price: " << prices[iA->first]
-			<< "\t Amount: " << iA->second << std::endl;
-	}
+	print_shares(amounts, prices);
+}
+
+void run_unordered_map_test()
+{
+	std::list<Share> shares = read_index("aktien.txt");
+
+	std::unordered_map<std::string, int> amounts;
+	std::unordered_map<std::string, double> prices;
+	share_list_to_maps(shares, amounts, prices);
+
+	print_shares(amounts, prices);
 }
 
 std::list<Share>& read_index(std::string file)
@@ -224,9 +249,10 @@ std::list<Share>& read_index(std::string file)
 	return *shares.release();
 }
 
+template <class Map_type_string_int, class Map_type_string_double>
 void share_list_to_maps(std::list<Share>& shares,
-	std::map<std::string, int>& amounts,
-	std::map<std::string, double>& prices)
+	Map_type_string_int& amounts,
+	Map_type_string_double& prices)
 {
 	for (auto share : shares)
 	{
@@ -235,6 +261,53 @@ void share_list_to_maps(std::list<Share>& shares,
 	}
 }
 
+template <class Map_type_string_int, class Map_type_string_double>
+void print_shares(
+	Map_type_string_int& amounts,
+	Map_type_string_double& prices)
+{
+	for (Map_type_string_int::const_iterator iA = amounts.begin();
+	iA != amounts.end(); iA++)
+	{
+		std::cout << iA->first << "\t Price: " << prices[iA->first]
+			<< "\t Amount: " << iA->second << std::endl;
+	}
+}
+
+
+//dictionary
+void dictionary_test()
+{
+	std::string from = "aktien.txt", to = "out.txt";
+	
+	std::ifstream is(from.c_str());
+	std::ofstream os(to.c_str());
+
+
+	/*
+	The default-constructed std::istream_iterator is 
+	known as the end-of-stream iterator. 
+	When a valid std::istream_iterator reaches the end 
+	of the underlying stream, it becomes equal to 
+	the end-of-stream iterator. Dereferencing or 
+	incrementing it further invokes undefined behavior. 
+	*/
+	std::istream_iterator<std::string> ii(is);
+	std::istream_iterator<std::string> eos;
+	std::ostream_iterator<std::string> oi(os, "\n");
+
+	//set == RB tree (all values once)
+	std::set<std::string> words(ii, eos);
+
+	std::copy_if(words.begin(), words.end(), oi, is_alpha);
+}
+
+bool is_alpha(std::string s)
+{
+	std::locale loc1("C");
+	if (std::isalpha(s[0], loc1)) return true;
+	return false;
+}
 
 /* !!DEBUG CODE!!
 //function
