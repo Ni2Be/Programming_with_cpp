@@ -1,0 +1,72 @@
+﻿  main.cpp
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2229): error C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2216): note: Siehe Deklaration von "std::_Copy_impl"
+  d:\programmieren\programming_with_cpp\chapter 21 stl algorithm\tasks\tasks\main.cpp(141): note: Siehe Verweis auf die Instanziierung der gerade kompilierten Funktions-template "_OutIt std::copy<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>,std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>>(_InIt,_InIt,_OutIt)".
+          with
+          [
+              _OutIt=std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>,
+              _Kty=std::string,
+              _Ty=double,
+              _InIt=std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>>
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2220): error C2672: "_Iter_cat": keine übereinstimmende überladene Funktion gefunden
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2230): note: Siehe Verweis auf die Instanziierung der gerade kompilierten Funktions-template "_OutIt std::_Copy_impl<std::_Tree_unchecked_iterator<_Mytree>,_OutIt>(_InIt,_InIt,_OutIt,std::false_type)".
+          with
+          [
+              _OutIt=std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>,
+              _Mytree=std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>,
+              _InIt=std::_Tree_unchecked_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>>
+          ]
+  d:\programmieren\programming_with_cpp\chapter 21 stl algorithm\tasks\tasks\main.cpp(141): note: Siehe Verweis auf die Instanziierung der gerade kompilierten Funktions-template "_OutIt std::copy<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>,std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>>(_InIt,_InIt,_OutIt)".
+          with
+          [
+              _OutIt=std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>,
+              _Kty=std::string,
+              _Ty=double,
+              _InIt=std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>>
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2220): error C2893: Funktionsvorlage "iterator_traits<_Iter>::iterator_category std::_Iter_cat(const _Iter &)" konnte nicht spezialisiert werden
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2220): note: Mit den folgenden Vorlagenargumenten:
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2220): note: "_Iter=std::vector<std::pair<std::string,double>,std::allocator<_Ty>>"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2220): error C2665: "std::_Copy_impl": Durch keine der 4 Überladungen konnten alle Argumenttypen konvertiert werden.
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2216): note: kann "_OutIt std::_Copy_impl<std::_Tree_unchecked_iterator<_Mytree>,_OutIt>(_InIt,_InIt,_OutIt,std::false_type)" sein
+          with
+          [
+              _OutIt=std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>,
+              _Mytree=std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>,
+              _InIt=std::_Tree_unchecked_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2206): note: oder "_OutIt std::_Copy_impl<std::_Tree_unchecked_iterator<_Mytree>,_OutIt>(_InIt,_InIt,_OutIt,std::true_type)"
+          with
+          [
+              _OutIt=std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>,
+              _Mytree=std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>,
+              _InIt=std::_Tree_unchecked_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2154): note: oder "_OutIt std::_Copy_impl<std::_Tree_unchecked_iterator<_Mytree>,_OutIt>(_InIt,_InIt,_OutIt,std::_Scalar_ptr_iterator_tag)"
+          with
+          [
+              _OutIt=std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>,
+              _Mytree=std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>,
+              _InIt=std::_Tree_unchecked_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2144): note: oder "_OutIt std::_Copy_impl<std::_Tree_unchecked_iterator<_Mytree>,_OutIt>(_InIt,_InIt,_OutIt,std::_Nonscalar_ptr_iterator_tag)"
+          with
+          [
+              _OutIt=std::vector<std::pair<std::string,double>,std::allocator<std::pair<std::string,double>>>,
+              _Mytree=std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>,
+              _InIt=std::_Tree_unchecked_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(2220): note: bei Anpassung der Argumentliste "(std::_Tree_unchecked_iterator<_Mytree>, std::_Tree_unchecked_iterator<_Mytree>, std::vector<std::pair<std::string,double>,std::allocator<_Ty>>, std::bidirectional_iterator_tag)"
+          with
+          [
+              _Mytree=std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>
+          ]
+          and
+          [
+              _Mytree=std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,double>>>
+          ]
+          and
+          [
+              _Ty=std::pair<std::string,double>
+          ]

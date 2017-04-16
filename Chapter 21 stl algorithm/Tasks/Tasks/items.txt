@@ -1,0 +1,10 @@
+0001 Coffe 230
+0002 Pasta 33
+0003 Sugar 23
+0004 Chees 12
+0005 Sweet 344
+0006 Hony 4
+0007 Wine 34
+0008 Beer 34
+0009 Tomato 332
+0010 Onion 90
