@@ -114,6 +114,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="doubles.txt" />
     <Text Include="items.txt" />
     <Text Include="numbers.txt" />
   </ItemGroup>

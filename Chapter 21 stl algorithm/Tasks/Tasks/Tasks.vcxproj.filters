@@ -29,6 +29,9 @@
     <Text Include="numbers.txt">
       <Filter>Ressourcendateien</Filter>
     </Text>
+    <Text Include="doubles.txt">
+      <Filter>Ressourcendateien</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Item.h">
