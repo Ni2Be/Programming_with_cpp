@@ -3,41 +3,101 @@
 #include <string>
 #include <regex>
 
+void simple_input();
+
+void searching();
+
 int main()
 {
-	std::string s = "Some people, when confronted with a problem, think "
-		"\"I know, I'll use regular expressions.\" "
-		"Now they have two problems.";
+	//simple_input();
+	searching();
+}
 
-	std::regex self_regex("REGULAR EXPRESSIONS",
-		std::regex_constants::ECMAScript | std::regex_constants::icase);
-	if (std::regex_search(s, self_regex)) {
-		std::cout << "Text contains the phrase 'regular expressions'\n";
-	}
 
-	std::regex word_regex("(\\S+)");
-	auto words_begin =
-		std::sregex_iterator(s.begin(), s.end(), word_regex);
-	auto words_end = std::sregex_iterator();
+void searching()
+{
+	{
+		bool run = true;
+		while (run)
+		{
+			using namespace std;
 
-	std::cout << "Found "
-		<< std::distance(words_begin, words_end)
-		<< " words\n";
 
-	const int N = 6;
-	std::cout << "Words longer than " << N << " characters:\n";
-	for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
-		std::smatch match = *i;
-		std::string match_str = match.str();
-		if (match_str.size() > N) {
-			std::cout << "  " << match_str << '\n';
+			regex pattern;
+			bool is_valid = false;
+
+			cout << "q} to quit\n";
+			while (!is_valid)
+			{
+				cout << "search pattern: ";
+				string input;
+				getline(cin, input);
+
+				if (input == "q}")
+				{
+					exit(0);
+				}
+				//regex operator=() throws
+				try
+				{
+					pattern = input;
+					is_valid = true;
+				}
+				catch (exception)
+				{
+					cerr << input << " nope!\n";
+				}
+			}
+
+			cout << "search in: ";
+			string line;
+			while (getline(cin, line))
+			{
+				if (line == "q}")
+				{
+					exit(0);
+				}
+				smatch matching;
+
+				if (regex_search(line, matching, pattern))
+				{
+					for (int i = 0; i < matching.size(); i++)
+					{
+						cout << i << " " << matching[i] << endl;
+					}
+				}
+				else
+				{
+					cout << "nothing found\n";
+				}
+			}
 		}
 	}
+}
 
-	std::regex long_word_regex("(\\w{7,})");
-	std::string new_s = std::regex_replace(s, long_word_regex, "[$&]");
-	std::cout << new_s << '\n';
+void simple_input()
+{
+	{
+		using namespace std;
 
-	char ch;
-	std::cin >> ch;
+		while (true)
+		{
+			string s;
+			cout << "Input: ";
+			cin >> s;
+
+			if (s == "q")
+				break;
+
+			/*valid:
+			any number of letters, 3 digits,
+			any number of letters or digits
+			*/
+			regex valid{ "[[:alpha:]]*\\d{3}\\w*" };
+			if (regex_match(s, valid))
+				cout << s << " is valid\n";
+			else
+				cout << s << " is invalid\n";
+		}
+	}
 }
