@@ -1,0 +1,7 @@
+﻿  main.cpp
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\tasks\tasks\main.cpp(21): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\tasks\tasks\main.cpp(33): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\tasks\tasks\main.cpp(35): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\tasks\tasks\main.cpp(39): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  Tasks.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Tasks\Debug\Tasks.exe
+  Tasks.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Tasks\Debug\Tasks.pdb (Partial PDB)

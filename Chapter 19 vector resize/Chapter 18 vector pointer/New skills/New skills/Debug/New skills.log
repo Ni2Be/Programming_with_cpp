@@ -1,7 +1,0 @@
-﻿  main.cpp
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\new skills\new skills\main.cpp(40): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\new skills\new skills\main.cpp(42): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\new skills\new skills\main.cpp(49): warning C4018: "<=": Konflikt zwischen "signed" und "unsigned"
-d:\programmieren\programming_with_cpp\chapter 18 vector pointer\new skills\new skills\main.cpp(93): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-  New skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\New skills\Debug\New skills.exe
-  New skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\New skills\Debug\New skills.pdb (Partial PDB)

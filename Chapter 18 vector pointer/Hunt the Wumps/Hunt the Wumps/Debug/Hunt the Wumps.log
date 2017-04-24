@@ -1,0 +1,25 @@
+﻿  Labyrinth.cpp
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(95): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(98): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(100): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(102): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(113): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(159): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(167): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(170): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(203): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\labyrinth.cpp(205): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  HtW_Game.cpp
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\htw_game.cpp(77): warning C4018: ">": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\htw_game.cpp(85): warning C4018: ">": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\htw_game.cpp(159): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\htw_game.cpp(162): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\htw_game.cpp(189): warning C4018: ">=": Konflikt zwischen "signed" und "unsigned"
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\htw_game.cpp(259): warning C4129: " ": nicht erkannte Folge von Escapesequenz
+d:\programmieren\programming_with_cpp\chapter 18 vector pointer\hunt the wumps\hunt the wumps\htw_game.cpp(352): warning C4129: " ": nicht erkannte Folge von Escapesequenz
+  Code wird generiert...
+  Kompilieren...
+  main.cpp
+  Code wird generiert...
+  Hunt the Wumps.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Hunt the Wumps\Debug\Hunt the Wumps.exe
+  Hunt the Wumps.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 18 vector pointer\Hunt the Wumps\Debug\Hunt the Wumps.pdb (Partial PDB)

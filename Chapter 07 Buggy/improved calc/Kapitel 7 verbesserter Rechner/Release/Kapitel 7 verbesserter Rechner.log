@@ -1,0 +1,9 @@
+﻿  main.cpp
+main.cpp(239): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+main.cpp(248): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+main.cpp(271): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  Code wird generiert.
+  All 254 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  Kapitel 7 verbesserter Rechner.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 07 Buggy\improved calc\Release\Kapitel 7 verbesserter Rechner.exe
+  Kapitel 7 verbesserter Rechner.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 07 Buggy\improved calc\Release\Kapitel 7 verbesserter Rechner.pdb (Full PDB)
