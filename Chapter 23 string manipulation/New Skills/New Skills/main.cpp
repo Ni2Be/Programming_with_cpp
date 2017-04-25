@@ -26,7 +26,7 @@ void searching()
 			regex pattern;
 			bool is_valid = false;
 
-			cout << "q} to quit\n";
+			cout << "q} to quit\nn} for new pattern\n";
 			while (!is_valid)
 			{
 				cout << "search pattern: ";
@@ -56,6 +56,10 @@ void searching()
 				if (line == "q}")
 				{
 					exit(0);
+				}
+				else if (line == "n}")
+				{
+					break;
 				}
 				smatch matching;
 
