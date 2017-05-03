@@ -1,4 +1,4 @@
 ﻿  main.cpp
-d:\programmieren\programming_with_cpp\chapter 23 string manipulation\new skills\new skills\main.cpp(68): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
-  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 23 string manipulation\New Skills\Debug\New Skills.exe
-  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 23 string manipulation\New Skills\Debug\New Skills.pdb (Partial PDB)
+d:\programmieren\programming_with_cpp\chapter 23 string manipulation\new skills\new skills\main.cpp(39): error C2440: "Typumwandlung": "std::_Timeobj<char,const tm *>" kann nicht in "int" konvertiert werden
+  d:\programmieren\programming_with_cpp\chapter 23 string manipulation\new skills\new skills\main.cpp(39): note: Kein benutzerdefinierter Konvertierungsoperator verfügbar, der diese Konvertierung durchführen kann, oder der Operator kann nicht aufgerufen werden
+d:\programmieren\programming_with_cpp\chapter 23 string manipulation\new skills\new skills\main.cpp(85): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
