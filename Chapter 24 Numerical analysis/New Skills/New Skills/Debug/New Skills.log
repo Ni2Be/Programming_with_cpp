@@ -1,0 +1,7 @@
+﻿  main.cpp
+d:\programmieren\programming_with_cpp\chapter 24 numerical analysis\new skills\new skills\main.cpp(21): warning C4101: "arr": Unreferenzierte lokale Variable
+d:\programmieren\programming_with_cpp\chapter 24 numerical analysis\new skills\new skills\main.cpp(55): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+d:\programmieren\programming_with_cpp\chapter 24 numerical analysis\new skills\new skills\main.cpp(57): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+d:\programmieren\programming_with_cpp\chapter 24 numerical analysis\new skills\new skills\main.cpp(59): warning C4244: "=": Konvertierung von "int" in "float", möglicher Datenverlust
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 24 Numerical analysis\New Skills\Debug\New Skills.exe
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 24 Numerical analysis\New Skills\Debug\New Skills.pdb (Partial PDB)

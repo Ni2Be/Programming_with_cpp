@@ -1,0 +1,12 @@
+﻿  main.cpp
+main.cpp(49): warning C4305: "Initialisierung": Verkürzung von "__int64" in "unsigned int"
+main.cpp(49): warning C4309: "Initialisierung": Verkürzung eines konstanten Wertes
+main.cpp(57): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+main.cpp(114): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  Code wird generiert.
+  1 of 31 functions ( 3.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Codegenerierung ist abgeschlossen.
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 25 Embedded\New Skills\Release\New Skills.exe
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 25 Embedded\New Skills\Release\New Skills.pdb (Full PDB)

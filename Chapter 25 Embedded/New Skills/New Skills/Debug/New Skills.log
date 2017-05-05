@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\programmieren\programming_with_cpp\chapter 25 embedded\new skills\new skills\main.cpp(183): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 25 Embedded\New Skills\Debug\New Skills.exe
+  New Skills.vcxproj -> D:\Programmieren\Programming_with_cpp\Chapter 25 Embedded\New Skills\Debug\New Skills.pdb (Partial PDB)
