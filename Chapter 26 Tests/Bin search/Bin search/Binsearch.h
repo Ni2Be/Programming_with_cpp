@@ -12,7 +12,7 @@
 
 
 /*
-first: is called first becouse it wont allways point at the first position
+first: is called first but it wont allways point at the first position
 end: is called end becouse it will allways point to the real end.
 */
 template <class Type_Iterator>
