@@ -4,6 +4,6 @@ The code in this repository may be ugly and not complete, but I will leave it he
 If you are new to C++ you will find a good documentation here: <br>
 http://en.cppreference.com/w/
 <br><br>
-and if you are in the last chapters you will love the talks of the CppCon:<br>
+and if you are in the last chapters you will love the talks of CppCon:<br>
 https://www.youtube.com/user/CppCon
 
